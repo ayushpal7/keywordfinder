@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>KeywordFinder.io — Free Keyword Research Tool | Find Keywords That Rank</title>
+<title>KeywordFinder — Free Keyword Research Tool | Find Keywords That Rank</title>
 <meta name="description" content="KeywordFinder is a 100% free keyword research tool. Find thousands of keyword ideas with search volume, keyword difficulty, CPC, and search intent. No sign-up required."/>
-<meta name="keywords" content="free keyword research tool, keyword finder, keyword difficulty checker, search volume checker, SEO keyword tool, long tail keyword finder, keyword ideas generator"/>
+<meta name="keywords" content="free keyword research tool, keyword finder, keyword difficulty checker, search volume checker, SEO keyword tool, long tail keyword finder"/>
 <meta property="og:title" content="KeywordFinder — Free Keyword Research Tool"/>
 <meta property="og:description" content="Get real keyword data — search volume, difficulty, CPC, intent — completely free. No account needed."/>
 <meta property="og:type" content="website"/>
@@ -13,20 +13,18 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "KeywordFinder",
-  "url": "https://keywordfinder.io",
+  "url": "https://keywordfinder.dev",
   "description": "Free keyword research tool with search volume, difficulty, CPC and intent data",
   "applicationCategory": "SEOApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -36,17 +34,13 @@
   --accent:#00d68f;--accent2:#3b9eff;--accent3:#ff6b35;--accent4:#b57bff;
   --red:#ff4060;--yellow:#ffc94a;
   --font-head:'Syne',sans-serif;--font-mono:'DM Mono',monospace;--font-serif:'Lora',serif;
-  --radius:12px;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--font-mono);font-size:14px;line-height:1.6;overflow-x:hidden}
-
-/* grid bg */
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.25;pointer-events:none;z-index:0}
-
 .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 20px}
 .wrap-wide{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 20px}
 
-/* ── HEADER ── */
+/* HEADER */
 header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,9,13,.92);backdrop-filter:blur(12px);z-index:100}
 .hdr{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -56,34 +50,37 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 .logo-name span{color:var(--accent)}
 .hdr-badge{font-size:10px;background:rgba(0,214,143,.1);border:1px solid rgba(0,214,143,.3);color:var(--accent);padding:4px 10px;border-radius:20px;letter-spacing:.1em}
 
-/* ── HERO ── */
+/* HERO */
 .hero{padding:64px 0 44px;text-align:center}
 .hero-tag{display:inline-block;font-size:11px;letter-spacing:.15em;color:var(--accent);background:rgba(0,214,143,.08);border:1px solid rgba(0,214,143,.2);padding:5px 14px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
 .hero h1{font-family:var(--font-head);font-size:clamp(34px,5.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:16px}
-.hero h1 mark{background:none;color:var(--accent);position:relative}
-.hero h1 mark::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:3px;background:var(--accent);opacity:.35;border-radius:2px}
+.hero h1 mark{background:none;color:var(--accent)}
 .hero-sub{color:var(--muted2);font-size:15px;max-width:520px;margin:0 auto 40px;line-height:1.7}
 .hero-stats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-.hero-stat{text-align:center}
 .hero-stat-num{font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--accent)}
 .hero-stat-lbl{font-size:11px;color:var(--muted);margin-top:2px}
 
-/* ── TOOL CARD ── */
+/* TOOL */
 .tool-card{background:var(--bg2);border:1px solid var(--border2);border-radius:18px;padding:28px;max-width:780px;margin:0 auto}
 .input-row{display:flex;gap:10px;margin-bottom:14px}
 .kw-input{flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font-mono);font-size:15px;padding:14px 18px;border-radius:10px;outline:none;transition:border .2s,box-shadow .2s}
 .kw-input::placeholder{color:var(--muted)}
 .kw-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,214,143,.1)}
-.btn-go{background:var(--accent);color:#000;font-family:var(--font-head);font-size:14px;font-weight:800;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:opacity .2s,transform .1s;white-space:nowrap;letter-spacing:-.2px}
-.btn-go:hover{opacity:.88;transform:translateY(-1px)}
-.btn-go:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.opts{display:flex;gap:8px;flex-wrap:wrap}
-.sel{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font-mono);font-size:12px;padding:8px 12px;border-radius:8px;outline:none;cursor:pointer;transition:border .2s}
-.sel:focus{border-color:var(--accent)}
+.btn-go{background:var(--accent);color:#000;font-family:var(--font-head);font-size:14px;font-weight:800;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.btn-go:hover{opacity:.88}
+.btn-go:disabled{opacity:.4;cursor:not-allowed}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.sel{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font-mono);font-size:12px;padding:8px 12px;border-radius:8px;outline:none;cursor:pointer}
 .sel option{background:var(--bg3)}
-.tool-hint{font-size:11px;color:var(--muted);margin-top:13px;text-align:center}
 
-/* ── LOADING ── */
+/* TURNSTILE */
+.turnstile-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
+.turnstile-label{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:8px}
+.turnstile-verified{color:var(--accent);font-size:12px;display:none;align-items:center;gap:6px}
+.turnstile-verified.show{display:flex}
+.tool-hint{font-size:11px;color:var(--muted);text-align:center}
+
+/* LOADING */
 .loading{display:none;text-align:center;padding:52px 20px}
 .loading.on{display:block}
 .spin{width:36px;height:36px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .75s linear infinite;margin:0 auto 14px}
@@ -92,124 +89,108 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 .load-step{font-size:11px;color:var(--muted);opacity:0;animation:fup .4s forwards;display:flex;align-items:center;gap:8px}
 @keyframes fup{to{opacity:1;transform:none}from{opacity:0;transform:translateY(6px)}}
 
-/* ── ERROR ── */
+/* ERROR */
 .err-box{background:rgba(255,64,96,.07);border:1px solid rgba(255,64,96,.25);color:var(--red);padding:14px 18px;border-radius:10px;margin:16px 0;font-size:13px}
 
-/* ── STATS BAR ── */
+/* STATS */
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:28px 0 24px}
 .stat{background:var(--bg2);padding:16px 18px}
 .stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
 .stat-val{font-family:var(--font-head);font-size:22px;font-weight:700}
-.c-green{color:var(--accent)}.c-blue{color:var(--accent2)}.c-purple{color:var(--accent4)}.c-orange{color:var(--accent3)}
+.c-green{color:var(--accent)}.c-blue{color:var(--accent2)}
 
-/* ── TABS ── */
-.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px;gap:0}
-.tab{font-size:12px;padding:10px 16px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.03em}
-.tab:hover{color:var(--text)}
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px}
+.tab{font-size:12px;padding:10px 16px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:all .2s}
 .tab.on{color:var(--accent);border-bottom-color:var(--accent)}
 
-/* ── RESULTS HEADER ── */
+/* RESULTS */
 .res-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
 .res-title{font-family:var(--font-head);font-size:15px;font-weight:700}
 .actions{display:flex;gap:8px}
 .btn-sm{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-size:11px;padding:6px 12px;border-radius:7px;cursor:pointer;transition:all .2s;font-family:var(--font-mono)}
 .btn-sm:hover{border-color:var(--accent);color:var(--accent)}
-
-/* ── INTENT FILTERS ── */
 .filter-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
 .fp{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:11px;padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
 .fp.on{border-color:var(--accent);color:var(--accent);background:rgba(0,214,143,.07)}
 
-/* ── TABLE ── */
+/* TABLE */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px}
 table{width:100%;border-collapse:collapse;font-size:12.5px}
 thead{background:var(--bg3)}
-th{padding:10px 13px;text-align:left;font-size:10px;letter-spacing:.1em;color:var(--muted);white-space:nowrap;cursor:pointer;user-select:none;text-transform:uppercase;font-weight:500}
+th{padding:10px 13px;text-align:left;font-size:10px;letter-spacing:.1em;color:var(--muted);white-space:nowrap;cursor:pointer;user-select:none;text-transform:uppercase}
 th:hover{color:var(--text)}
-th.srt{color:var(--accent)}
 td{padding:10px 13px;border-top:1px solid var(--border);vertical-align:middle}
 tr:hover td{background:rgba(255,255,255,.02)}
 .kw-name{font-weight:500;color:var(--text);max-width:200px;word-break:break-word}
 .kw-topic{display:block;font-size:10px;color:var(--muted);margin-top:2px}
 .num{font-variant-numeric:tabular-nums}
-
-/* vol bar */
 .vol-row{display:flex;align-items:center;gap:7px}
 .vol-track{width:50px;height:3px;background:var(--bg5);border-radius:2px;overflow:hidden}
 .vol-fill{height:100%;background:var(--accent2);border-radius:2px}
-
-/* KD badge */
 .kd{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:500}
 .kd-e{background:rgba(0,214,143,.1);color:var(--accent);border:1px solid rgba(0,214,143,.25)}
 .kd-m{background:rgba(255,201,74,.1);color:var(--yellow);border:1px solid rgba(255,201,74,.25)}
 .kd-h{background:rgba(255,64,96,.1);color:var(--red);border:1px solid rgba(255,64,96,.25)}
 .kd-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
-
-/* intent */
-.intent{font-size:10px;padding:2px 7px;border-radius:4px;letter-spacing:.03em;font-weight:500}
+.intent{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500}
 .i-info{background:rgba(59,158,255,.1);color:var(--accent2)}
 .i-com{background:rgba(181,123,255,.1);color:var(--accent4)}
 .i-tra{background:rgba(0,214,143,.1);color:var(--accent)}
 .i-nav{background:rgba(255,107,53,.1);color:var(--accent3)}
-
-/* trend */
 .trend{display:flex;align-items:flex-end;gap:2px;height:18px}
 .tb{width:4px;border-radius:1px}
 
-/* clusters */
-.clusters{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:24px}
-.cl-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:border .2s}
-.cl-card:hover,.cl-card.on{border-color:var(--accent)}
+/* CLUSTERS */
+.clusters{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.cl-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;transition:border .2s}
+.cl-card:hover{border-color:var(--accent)}
 .cl-name{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px}
 .cl-kws{font-size:11px;color:var(--muted);line-height:1.8}
 
-/* ── EMPTY ── */
+/* EMPTY */
 .empty{text-align:center;padding:52px 20px;color:var(--muted)}
 .empty-icon{font-size:44px;margin-bottom:14px}
 .empty h3{font-family:var(--font-head);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
 
-/* ═══════════════════════════
-   SEO CONTENT SECTIONS
-═══════════════════════════ */
+/* SEO SECTIONS */
 .content-section{padding:72px 0;border-top:1px solid var(--border)}
-.section-tag{font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.section-tag{font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
 .section-h2{font-family:var(--font-head);font-size:clamp(24px,3.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:16px}
 .section-lead{color:var(--muted2);font-size:15px;line-height:1.75;max-width:640px;margin-bottom:40px}
-
-/* features grid */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
 .feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;transition:border .25s,transform .25s}
 .feat-card:hover{border-color:var(--accent);transform:translateY(-3px)}
 .feat-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px;font-size:20px}
-.feat-icon.g{background:rgba(0,214,143,.1)}
-.feat-icon.b{background:rgba(59,158,255,.1)}
-.feat-icon.p{background:rgba(181,123,255,.1)}
-.feat-icon.o{background:rgba(255,107,53,.1)}
+.feat-icon.g{background:rgba(0,214,143,.1)}.feat-icon.b{background:rgba(59,158,255,.1)}
+.feat-icon.p{background:rgba(181,123,255,.1)}.feat-icon.o{background:rgba(255,107,53,.1)}
 .feat-h{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:8px}
 .feat-p{font-size:13px;color:var(--muted2);line-height:1.65}
-
-/* how it works steps */
-.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;position:relative}
-.step{background:var(--bg2);border:1px solid var(--border);padding:28px 24px;position:relative}
-.step:first-child{border-radius:14px 0 0 14px}
-.step:last-child{border-radius:0 14px 14px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0}
+.step{background:var(--bg2);border:1px solid var(--border);padding:28px 24px}
+.step:first-child{border-radius:14px 0 0 14px}.step:last-child{border-radius:0 14px 14px 0}
 .step-num{font-family:var(--font-head);font-size:42px;font-weight:800;color:var(--border2);line-height:1;margin-bottom:12px}
 .step-h{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:8px}
 .step-p{font-size:13px;color:var(--muted2);line-height:1.6}
-
-/* comparison table */
 .comp-wrap{overflow-x:auto}
 .comp-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .comp-table th,.comp-table td{padding:13px 16px;text-align:center;border-bottom:1px solid var(--border);font-size:13px}
-.comp-table th{background:var(--bg3);font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.05em}
+.comp-table th{background:var(--bg3);font-family:var(--font-head);font-size:12px;font-weight:700}
 .comp-table td:first-child{text-align:left;font-weight:500}
 .comp-table tr:last-child td{border-bottom:none}
-.comp-table tr:hover td{background:rgba(255,255,255,.02)}
-.check{color:var(--accent);font-size:16px}
-.cross{color:var(--red)}
 .col-us{background:rgba(0,214,143,.05)!important}
-
-/* FAQ */
+.check{color:var(--accent)}.cross{color:var(--red)}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.use-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:16px}
+.use-num{font-family:var(--font-head);font-size:28px;font-weight:800;color:var(--accent);opacity:.3;line-height:1;flex-shrink:0}
+.use-h{font-family:var(--font-head);font-size:14px;font-weight:700;margin-bottom:6px}
+.use-p{font-size:13px;color:var(--muted2);line-height:1.65}
+.prose{font-family:var(--font-serif);font-size:15px;color:var(--muted2);line-height:1.85;max-width:720px}
+.prose h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin:28px 0 10px}
+.prose p{margin-bottom:14px}
+.prose ul{margin:10px 0 14px 20px}
+.prose li{margin-bottom:6px}
+.prose strong{color:var(--text);font-family:var(--font-mono)}
 .faq-list{display:flex;flex-direction:column;gap:2px}
 .faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border .2s}
 .faq-item.open{border-color:var(--accent)}
@@ -218,36 +199,10 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .faq-arrow{flex-shrink:0;transition:transform .25s;color:var(--muted)}
 .faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--accent)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:var(--muted2);line-height:1.8}
-.faq-item.open .faq-a{max-height:600px}
+.faq-item.open .faq-a{max-height:400px}
 .faq-a-inner{padding:0 20px 18px}
 
-/* use cases */
-.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.use-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start}
-.use-num{font-family:var(--font-head);font-size:28px;font-weight:800;color:var(--accent);opacity:.3;line-height:1;flex-shrink:0}
-.use-h{font-family:var(--font-head);font-size:14px;font-weight:700;margin-bottom:6px}
-.use-p{font-size:13px;color:var(--muted2);line-height:1.65}
-
-/* domain section */
-.domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-.domain-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
-.domain-name{font-family:var(--font-head);font-size:15px;font-weight:700}
-.domain-name span{color:var(--accent)}
-.domain-price{font-size:11px;color:var(--muted)}
-.domain-tag{font-size:10px;padding:3px 8px;border-radius:4px}
-.tag-hot{background:rgba(255,107,53,.1);color:var(--accent3)}
-.tag-avail{background:rgba(0,214,143,.1);color:var(--accent)}
-.tag-taken{background:rgba(255,64,96,.1);color:var(--red)}
-
-/* blog content */
-.prose{font-family:var(--font-serif);font-size:15px;color:var(--muted2);line-height:1.85;max-width:720px}
-.prose h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin:28px 0 10px;letter-spacing:-.3px}
-.prose p{margin-bottom:14px}
-.prose ul{margin:10px 0 14px 20px}
-.prose li{margin-bottom:6px}
-.prose strong{color:var(--text);font-style:normal;font-family:var(--font-mono)}
-
-/* footer */
+/* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 28px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
 .footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;margin-top:10px;max-width:240px}
@@ -256,7 +211,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 .footer-col a:hover{color:var(--accent)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
 
-/* responsive */
 @media(max-width:700px){
   .input-row{flex-direction:column}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
@@ -264,15 +218,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   .steps{grid-template-columns:1fr}
   .step{border-radius:10px!important;margin-bottom:2px}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .hero-stats{gap:16px}
 }
-
-/* Turnstile */
-.turnstile-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:10px 16px;margin-top:14px}
-.turnstile-label{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:8px;flex:1}
-.cf-turnstile{flex-shrink:0}
-.turnstile-verified{color:var(--accent);font-size:12px;display:none;align-items:center;gap:6px;flex-shrink:0}
-.turnstile-verified.show{display:flex}
 </style>
 </head>
 <body>
@@ -292,11 +238,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <main>
 <div class="wrap">
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-tag">Free Keyword Research Tool</div>
   <h1>Find Keywords That<br/><mark>Actually Rank</mark></h1>
-  <p class="hero-sub">Get real keyword data — search volume, difficulty scores, CPC, and search intent — powered by AI. No account. No credit card. No limits.</p>
+  <p class="hero-sub">Real keyword data — search volume, difficulty, CPC, and intent — powered by AI. No account. No credit card. No limits.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-lbl">Keywords per search</div></div>
     <div class="hero-stat"><div class="hero-stat-num">10</div><div class="hero-stat-lbl">Countries supported</div></div>
@@ -336,7 +281,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
       <option value="80">80 keywords</option>
     </select>
   </div>
-  <!-- Cloudflare Turnstile CAPTCHA -->
+  <!-- Cloudflare Turnstile -->
   <div class="turnstile-wrap">
     <div class="turnstile-label">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 100 12A6 6 0 007 1zm0 9.5a.75.75 0 110-1.5.75.75 0 010 1.5zm.75-3.25a.75.75 0 01-1.5 0V4.75a.75.75 0 011.5 0v2.5z" fill="currentColor" opacity=".5"/></svg>
@@ -345,14 +290,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
     <div class="cf-turnstile"
       data-sitekey="0x4AAAAAACtntEANcGDMn6GV"
       data-theme="dark"
-      data-size="normal"
       data-callback="onTurnstileSuccess"
-      data-expired-callback="onTurnstileExpire"
-      id="turnstileWidget">
+      data-expired-callback="onTurnstileExpire">
     </div>
     <div class="turnstile-verified" id="turnstileVerified">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Verified
+      Verified ✓
     </div>
   </div>
   <p class="tool-hint">Complete the CAPTCHA above then press Enter or click Analyze</p>
@@ -364,7 +307,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   <div style="font-family:var(--font-head);font-size:15px;font-weight:700">Analyzing keywords...</div>
   <div class="load-steps" id="loadSteps"></div>
 </div>
-
 <div id="errEl"></div>
 
 <!-- RESULTS -->
@@ -375,7 +317,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
     <div class="tab" onclick="switchTab('cl',this)">Topic Clusters</div>
     <div class="tab" onclick="switchTab('qq',this)">Questions</div>
   </div>
-
   <div id="tab-kw">
     <div class="res-hdr">
       <div class="res-title" id="resTitle"></div>
@@ -406,10 +347,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
       </table>
     </div>
   </div>
-
-  <div id="tab-cl" style="display:none">
-    <div class="clusters" id="clustersEl"></div>
-  </div>
+  <div id="tab-cl" style="display:none"><div class="clusters" id="clustersEl"></div></div>
   <div id="tab-qq" style="display:none">
     <div class="tbl-wrap">
       <table>
@@ -420,18 +358,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   </div>
 </div>
 
-<!-- EMPTY -->
 <div class="empty" id="emptyEl">
   <div class="empty-icon">🔍</div>
   <h3>Enter a keyword to get started</h3>
-  <p>Type any topic, niche, or seed keyword above and instantly get 50+ keyword ideas with real metrics.</p>
+  <p>Type any topic or niche above and instantly get 50+ keyword ideas with real metrics.</p>
 </div>
 
-</div><!-- /wrap -->
-
-<!-- ════════════════════════════════
-     SEO CONTENT BELOW THE TOOL
-════════════════════════════════ -->
+</div>
 
 <!-- FEATURES -->
 <section class="content-section">
@@ -440,46 +373,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   <h2 class="section-h2">Everything You Need.<br/>Nothing You Pay For.</h2>
   <p class="section-lead">KeywordFinder gives you the same data as Ahrefs and SEMrush — keyword difficulty, search volume, CPC, and intent — completely free, forever.</p>
   <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon g">📊</div>
-      <div class="feat-h">Search Volume Estimates</div>
-      <p class="feat-p">Get monthly search volume estimates for any keyword in 10+ countries. Understand exactly how much traffic a keyword can bring to your site.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon b">🎯</div>
-      <div class="feat-h">Keyword Difficulty Score</div>
-      <p class="feat-p">Our KD score (0–100) tells you how hard it is to rank on page 1 for any keyword. Find low-competition keywords you can actually win.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon p">💡</div>
-      <div class="feat-h">Search Intent Detection</div>
-      <p class="feat-p">Automatically classify keywords as Informational, Commercial, Transactional, or Navigational — so you create content that matches what users actually want.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon o">💰</div>
-      <div class="feat-h">CPC & Competition Data</div>
-      <p class="feat-p">See the average cost-per-click and advertiser competition for every keyword — invaluable for both SEO and Google Ads campaigns.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon g">🌿</div>
-      <div class="feat-h">Topic Cluster Builder</div>
-      <p class="feat-p">Keywords are automatically grouped into topic clusters — the modern SEO strategy that helps you build content authority faster.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon b">📈</div>
-      <div class="feat-h">Trend Analysis</div>
-      <p class="feat-p">See 8-month search trend data for every keyword. Identify seasonal keywords and rising trends before your competitors do.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon p">❓</div>
-      <div class="feat-h">Question Keywords</div>
-      <p class="feat-p">Find question-based keywords perfect for blog posts, FAQ pages, and featured snippet opportunities that drive no-click searches back to your site.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon o">⬇</div>
-      <div class="feat-h">CSV Export</div>
-      <p class="feat-p">Export all keyword data to CSV in one click — import directly into Google Sheets, Airtable, or any SEO workflow tool you use.</p>
-    </div>
+    <div class="feat-card"><div class="feat-icon g">📊</div><div class="feat-h">Search Volume Estimates</div><p class="feat-p">Get monthly search volume estimates for any keyword in 10+ countries.</p></div>
+    <div class="feat-card"><div class="feat-icon b">🎯</div><div class="feat-h">Keyword Difficulty Score</div><p class="feat-p">KD score 0–100 tells you how hard it is to rank on page 1 for any keyword.</p></div>
+    <div class="feat-card"><div class="feat-icon p">💡</div><div class="feat-h">Search Intent Detection</div><p class="feat-p">Auto-classify keywords as Informational, Commercial, Transactional, or Navigational.</p></div>
+    <div class="feat-card"><div class="feat-icon o">💰</div><div class="feat-h">CPC & Competition Data</div><p class="feat-p">See cost-per-click and advertiser competition for every keyword.</p></div>
+    <div class="feat-card"><div class="feat-icon g">🌿</div><div class="feat-h">Topic Cluster Builder</div><p class="feat-p">Keywords auto-grouped into topic clusters for modern SEO content strategy.</p></div>
+    <div class="feat-card"><div class="feat-icon b">📈</div><div class="feat-h">Trend Analysis</div><p class="feat-p">8-month search trend data per keyword — spot seasonal and rising trends.</p></div>
+    <div class="feat-card"><div class="feat-icon p">❓</div><div class="feat-h">Question Keywords</div><p class="feat-p">Find question-based keywords perfect for featured snippet opportunities.</p></div>
+    <div class="feat-card"><div class="feat-icon o">⬇</div><div class="feat-h">CSV Export</div><p class="feat-p">Export all keyword data to CSV — import into Google Sheets instantly.</p></div>
   </div>
 </div>
 </section>
@@ -488,29 +389,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <section class="content-section">
 <div class="wrap">
   <div class="section-tag">How It Works</div>
-  <h2 class="section-h2">Keyword Research in<br/>3 Simple Steps</h2>
-  <p class="section-lead">No complex setup. No learning curve. Just type a keyword and get real data within seconds.</p>
+  <h2 class="section-h2">Keyword Research in 3 Simple Steps</h2>
+  <p class="section-lead">No complex setup. No learning curve. Just type a keyword and get data in seconds.</p>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-h">Enter Your Seed Keyword</div>
-      <p class="step-p">Type any topic, product, or niche into the search box. Choose your target country and keyword type — questions, long-tail, buying intent, or all.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-h">AI Analyzes the Data</div>
-      <p class="step-p">Our AI engine generates 50+ keyword variations, calculates difficulty scores, estimates search volumes, and detects search intent in real time.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-h">Export & Start Ranking</div>
-      <p class="step-p">Filter by intent or competition level, export your keyword list to CSV, and start building content that actually ranks on Google.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-h">Repeat for Free</div>
-      <p class="step-p">No daily limits. No monthly caps. No credit card. Run unlimited keyword research for any niche in any country — always 100% free.</p>
-    </div>
+    <div class="step"><div class="step-num">01</div><div class="step-h">Enter Your Seed Keyword</div><p class="step-p">Type any topic, product, or niche. Choose your target country and keyword type.</p></div>
+    <div class="step"><div class="step-num">02</div><div class="step-h">AI Analyzes the Data</div><p class="step-p">Our AI generates 50+ keyword variations with difficulty scores, volumes, and intent.</p></div>
+    <div class="step"><div class="step-num">03</div><div class="step-h">Export & Start Ranking</div><p class="step-p">Filter by intent, export to CSV, and build content that ranks on Google.</p></div>
+    <div class="step"><div class="step-num">04</div><div class="step-h">Repeat for Free</div><p class="step-p">No daily limits. No caps. No credit card. Unlimited research forever.</p></div>
   </div>
 </div>
 </section>
@@ -519,30 +404,24 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <section class="content-section">
 <div class="wrap">
   <div class="section-tag">Comparison</div>
-  <h2 class="section-h2">KeywordFinder vs.<br/>Paid Alternatives</h2>
-  <p class="section-lead">Why pay $99–$499/month when you can get the same core data for free? See how we stack up.</p>
+  <h2 class="section-h2">KeywordFinder vs. Paid Alternatives</h2>
+  <p class="section-lead">Why pay $99–$499/month when you can get the same core data for free?</p>
   <div class="comp-wrap">
     <table class="comp-table">
-      <thead>
-        <tr>
-          <th style="text-align:left">Feature</th>
-          <th class="col-us">KeywordFinder ✦</th>
-          <th>Ahrefs</th>
-          <th>SEMrush</th>
-          <th>Ubersuggest</th>
-        </tr>
-      </thead>
+      <thead><tr>
+        <th style="text-align:left">Feature</th>
+        <th class="col-us">KeywordFinder ✦</th>
+        <th>Ahrefs</th><th>SEMrush</th><th>Ubersuggest</th>
+      </tr></thead>
       <tbody>
         <tr><td>Price</td><td class="col-us" style="color:var(--accent);font-weight:700">Free</td><td>$99–$399/mo</td><td>$119–$449/mo</td><td>Free (limited)</td></tr>
         <tr><td>Sign-up required</td><td class="col-us"><span class="cross">✗ No</span></td><td>✓ Yes</td><td>✓ Yes</td><td>✓ Yes</td></tr>
-        <tr><td>Keyword difficulty score</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Search volume data</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Search intent classification</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
-        <tr><td>CPC data</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+        <tr><td>Keyword difficulty</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+        <tr><td>Search volume</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+        <tr><td>Search intent</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
         <tr><td>Topic clusters</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
-        <tr><td>Question keywords</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>CSV export</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗ (paid)</span></td></tr>
-        <tr><td>Daily search limits</td><td class="col-us" style="color:var(--accent)">Unlimited</td><td>Limited by plan</td><td>Limited by plan</td><td>3/day (free)</td></tr>
+        <tr><td>CSV export</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗ paid</span></td></tr>
+        <tr><td>Daily limits</td><td class="col-us" style="color:var(--accent)">Unlimited</td><td>By plan</td><td>By plan</td><td>3/day</td></tr>
       </tbody>
     </table>
   </div>
@@ -554,74 +433,35 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <div class="wrap">
   <div class="section-tag">Use Cases</div>
   <h2 class="section-h2">Who Uses KeywordFinder?</h2>
-  <p class="section-lead">From solo bloggers to agency teams — anyone who wants to grow organic traffic without paying hundreds of dollars a month.</p>
+  <p class="section-lead">From solo bloggers to agency teams — anyone who wants organic traffic without paying hundreds per month.</p>
   <div class="use-grid">
-    <div class="use-card">
-      <div class="use-num">01</div>
-      <div><div class="use-h">Bloggers & Content Creators</div><p class="use-p">Find low-competition, high-volume keywords for blog posts that rank on page 1. Identify question keywords for featured snippet opportunities.</p></div>
-    </div>
-    <div class="use-card">
-      <div class="use-num">02</div>
-      <div><div class="use-h">Freelance SEO Consultants</div><p class="use-p">Run keyword research for clients without eating into your margins. Export clean CSV reports to share with clients professionally.</p></div>
-    </div>
-    <div class="use-card">
-      <div class="use-num">03</div>
-      <div><div class="use-h">E-commerce Store Owners</div><p class="use-p">Discover transactional keywords with high buying intent. Find product and category page keywords that attract shoppers ready to buy.</p></div>
-    </div>
-    <div class="use-card">
-      <div class="use-num">04</div>
-      <div><div class="use-h">Startup Founders</div><p class="use-p">Validate your niche, understand search demand, and build an SEO content strategy before spending on paid ads — all at zero cost.</p></div>
-    </div>
-    <div class="use-card">
-      <div class="use-num">05</div>
-      <div><div class="use-h">Digital Marketing Students</div><p class="use-p">Learn keyword research with a real tool — not a textbook. Practice the same workflows used by professional SEOs every day.</p></div>
-    </div>
-    <div class="use-card">
-      <div class="use-num">06</div>
-      <div><div class="use-h">Small Business Owners</div><p class="use-p">Find local and industry keywords to compete with bigger brands. Build an organic presence without an expensive agency or software subscription.</p></div>
-    </div>
+    <div class="use-card"><div class="use-num">01</div><div><div class="use-h">Bloggers & Content Creators</div><p class="use-p">Find low-competition keywords for blog posts that rank on page 1.</p></div></div>
+    <div class="use-card"><div class="use-num">02</div><div><div class="use-h">Freelance SEO Consultants</div><p class="use-p">Run keyword research for clients without eating into your margins.</p></div></div>
+    <div class="use-card"><div class="use-num">03</div><div><div class="use-h">E-commerce Store Owners</div><p class="use-p">Discover transactional keywords that attract shoppers ready to buy.</p></div></div>
+    <div class="use-card"><div class="use-num">04</div><div><div class="use-h">Startup Founders</div><p class="use-p">Validate your niche and build an SEO strategy before spending on ads.</p></div></div>
+    <div class="use-card"><div class="use-num">05</div><div><div class="use-h">Marketing Students</div><p class="use-p">Learn keyword research with a real tool — not a textbook.</p></div></div>
+    <div class="use-card"><div class="use-num">06</div><div><div class="use-h">Small Business Owners</div><p class="use-p">Find local and industry keywords to compete with bigger brands.</p></div></div>
   </div>
 </div>
 </section>
 
-<!-- LONG FORM CONTENT -->
+<!-- GUIDE -->
 <section class="content-section">
 <div class="wrap">
   <div class="section-tag">Keyword Research Guide</div>
-  <h2 class="section-h2">The Complete Guide to<br/>Keyword Research in 2025</h2>
+  <h2 class="section-h2">The Complete Guide to Keyword Research in 2025</h2>
   <div class="prose">
-    <p>Keyword research is the foundation of every successful SEO strategy. Whether you're writing a blog post, optimizing a product page, or building a content calendar — the keywords you choose determine whether you get traffic or get ignored by Google.</p>
-
-    <h3>What Is Keyword Research and Why Does It Matter?</h3>
-    <p>Keyword research is the process of discovering what words and phrases people type into search engines when looking for information, products, or services. It matters because if you create content without knowing what people search for, you're essentially publishing blindly. The best content in the world gets zero traffic if nobody searches for it.</p>
-    <p>Tools like KeywordFinder help you find keywords with sufficient search volume, manageable competition, and the right search intent — the three pillars of a keyword worth targeting.</p>
-
-    <h3>Understanding Keyword Difficulty (KD)</h3>
-    <p>Keyword Difficulty is a score from 0 to 100 that estimates how hard it would be to rank on the first page of Google for a given keyword. A score of <strong>0–39</strong> is generally considered easy, <strong>40–69</strong> medium, and <strong>70–100</strong> hard. The score is calculated by analyzing the backlink profiles, domain authority, and content quality of the pages currently ranking in the top 10 results.</p>
-    <p>For new websites and blogs, we recommend targeting keywords with a KD below 30. As your site gains authority, you can gradually target more competitive terms.</p>
-
-    <h3>What Is Search Volume and How Is It Estimated?</h3>
-    <p>Monthly search volume (MSV) is the average number of times a keyword is searched per month. Tools like Ahrefs and SEMrush estimate this using clickstream data — anonymized browsing behavior collected from millions of users — and statistical modeling. KeywordFinder uses AI to generate realistic volume estimates based on real SEO patterns, keyword competitiveness, and industry benchmarks.</p>
-    <p>Important: search volume estimates are always approximations. A keyword showing 1,000 monthly searches might actually range from 600 to 2,000 in reality. Use volume as a relative signal, not an absolute number.</p>
-
+    <p>Keyword research is the foundation of every successful SEO strategy. The keywords you choose determine whether you get traffic or get ignored by Google.</p>
+    <h3>What Is Keyword Difficulty (KD)?</h3>
+    <p>KD is scored 0–100 based on how competitive the top-10 ranking pages are. Below 40 is easy, 40–69 medium, 70+ hard. New websites should target KD below 30 first.</p>
     <h3>The 4 Types of Search Intent</h3>
-    <p>Search intent is the "why" behind a keyword — what the user actually wants when they type it into Google. Getting intent right is arguably more important than search volume. There are four main types:</p>
-    <ul>
-      <li><strong>Informational</strong> — The user wants to learn something. "How does SEO work", "what is a keyword". Best for blog posts, guides, and tutorials.</li>
-      <li><strong>Navigational</strong> — The user wants to find a specific website. "Ahrefs login", "KeywordFinder tool". These are hard to rank for unless it's your brand.</li>
-      <li><strong>Commercial</strong> — The user is researching before buying. "Best keyword research tools", "Ahrefs vs SEMrush". Best for comparison posts and reviews.</li>
-      <li><strong>Transactional</strong> — The user is ready to buy. "Buy keyword tool", "SEMrush discount code". Best for product and landing pages.</li>
-    </ul>
-
+    <p><strong>Informational</strong> — user wants to learn. Best for blog posts. <strong>Commercial</strong> — researching before buying. Best for comparison content. <strong>Transactional</strong> — ready to buy. Best for product pages. <strong>Navigational</strong> — looking for a specific site.</p>
     <h3>Long-Tail Keywords: Your Secret Weapon</h3>
-    <p>Long-tail keywords are phrases with 4 or more words that are more specific and typically have lower search volume but much lower competition. For example, "keyword research tool" is a head term with high volume and very high KD. But "free keyword research tool for beginners with low competition" is a long-tail keyword that's much easier to rank for — and converts better because the user is more specific.</p>
-    <p>Studies show that long-tail keywords account for over 70% of all search queries. Building a content strategy around long-tail keywords is the fastest way for new websites to get organic traffic.</p>
-
-    <h3>CPC and Why It Predicts Content Value</h3>
-    <p>Cost-per-click (CPC) is what advertisers pay for a single click on a Google Ad targeting that keyword. High CPC keywords (like "personal injury lawyer" at $50+ per click) indicate that businesses make significant money from that traffic — which means the topic has strong commercial value. Even if you're not running ads, targeting high-CPC keywords in your organic content means you're in profitable territory.</p>
-
-    <h3>How to Build a Topic Cluster Strategy</h3>
-    <p>Modern SEO rewards topical authority — the idea that a website covering one topic deeply ranks better than a site covering many topics superficially. A topic cluster strategy involves creating one comprehensive "pillar page" on a broad topic and several "cluster pages" on related subtopics, all linking to each other. KeywordFinder's Topic Clusters tab automatically groups your keywords into clusters so you can map out this strategy instantly.</p>
+    <p>Long-tail keywords (4+ words) are more specific with lower competition. They account for over 70% of all searches. Build content around long-tail keywords to get traffic faster as a new site.</p>
+    <h3>CPC and Content Value</h3>
+    <p>High CPC keywords indicate strong commercial value — businesses make money from that traffic. Even for organic SEO, high-CPC keywords signal profitable territory worth targeting.</p>
+    <h3>Topic Cluster Strategy</h3>
+    <p>Create one comprehensive pillar page on a broad topic, then cluster pages on subtopics — all linking to each other. This builds topical authority and helps all pages rank higher. KeywordFinder's Clusters tab maps this automatically.</p>
   </div>
 </div>
 </section>
@@ -636,92 +476,44 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 </div>
 </section>
 
-<!-- DOMAIN SUGGESTIONS -->
-<section class="content-section">
-<div class="wrap">
-  <div class="section-tag">Domain Names</div>
-  <h2 class="section-h2">Best Domain Names<br/>for Your SEO Tool</h2>
-  <p class="section-lead">Keyword-rich domains that describe exactly what the tool does — great for branding and can help with SEO ranking for tool-related searches.</p>
-  <div class="domain-grid">
-    <div class="domain-card"><div><div class="domain-name">keyword<span>finder</span>.io</div><div class="domain-price">~$30/yr · Exact match 🔥</div></div><span class="domain-tag tag-hot">TOP PICK</span></div>
-    <div class="domain-card"><div><div class="domain-name">kw<span>finder</span>.net</div><div class="domain-price">~$12/yr · Short & memorable</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">free<span>kwresearch</span>.com</div><div class="domain-price">~$12/yr · SEO-rich name</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">keyword<span>iq</span>.io</div><div class="domain-price">~$30/yr · Modern & techy</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">rank<span>finder</span>.io</div><div class="domain-price">~$30/yr · Broad SEO scope</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">keyword<span>lab</span>.io</div><div class="domain-price">~$30/yr · Professional feel</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">find<span>keywords</span>.io</div><div class="domain-price">~$30/yr · Self-explanatory</div></div><span class="domain-tag tag-avail">CHECK IT</span></div>
-    <div class="domain-card"><div><div class="domain-name">kw<span>finder</span>.com</div><div class="domain-price">Taken by Mangools</div></div><span class="domain-tag tag-taken">TAKEN</span></div>
-  </div>
-  <p style="font-size:13px;color:var(--muted);margin-top:16px">👉 Buy domains from <strong style="color:var(--text)">Namecheap.com</strong> (cheapest) or <strong style="color:var(--text)">Cloudflare Registrar</strong> (at-cost pricing, no markup). Host free on <strong style="color:var(--text)">Vercel</strong> or <strong style="color:var(--text)">Netlify</strong>.</p>
-</div>
-</section>
-
 </main>
 
-<!-- FOOTER -->
 <footer>
 <div class="wrap-wide">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo" style="text-decoration:none;display:flex;align-items:center;gap:10px;margin-bottom:8px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
         <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M2 9h5M11 9h5M9 2v5M9 11v5" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-        <div class="logo-name">Keyword<span style="color:var(--accent)">Finder</span></div>
+        <div class="logo-name">Keyword<span>Finder</span></div>
       </div>
-      <p>The only completely free keyword research tool with no daily limits, no sign-up, and no credit card required. Built for bloggers, SEOs, and founders.</p>
+      <p>The only completely free keyword research tool with no daily limits, no sign-up, and no credit card required.</p>
     </div>
-    <div class="footer-col">
-      <h4>Tool</h4>
-      <a href="#tool">Keyword Finder</a>
-      <a href="#tool">Volume Checker</a>
-      <a href="#tool">KD Checker</a>
-      <a href="#tool">Intent Analyzer</a>
-    </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <a href="#">SEO Guide 2025</a>
-      <a href="#">Keyword Research 101</a>
-      <a href="#">Long-tail Keywords</a>
-      <a href="#">Topic Clusters</a>
-    </div>
-    <div class="footer-col">
-      <h4>Compare</h4>
-      <a href="#">vs Ahrefs</a>
-      <a href="#">vs SEMrush</a>
-      <a href="#">vs Ubersuggest</a>
-      <a href="#">vs Google KP</a>
-    </div>
+    <div class="footer-col"><h4>Tool</h4><a href="#tool">Keyword Finder</a><a href="#tool">KD Checker</a><a href="#tool">Intent Analyzer</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="#">SEO Guide 2025</a><a href="#">Long-tail Keywords</a><a href="#">Topic Clusters</a></div>
+    <div class="footer-col"><h4>Compare</h4><a href="#">vs Ahrefs</a><a href="#">vs SEMrush</a><a href="#">vs Ubersuggest</a></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 KeywordFinder · Free Keyword Research Tool · All rights reserved</span>
+    <span>© 2025 KeywordFinder · Free Keyword Research Tool</span>
     <span>Made with ❤ for the SEO community</span>
   </div>
 </div>
 </footer>
 
 <script>
-// ══════════════════════════════
-//  FAQ DATA
-// ══════════════════════════════
 const faqs = [
-  {q:"Is KeywordFinder really 100% free?",a:"Yes, completely free. No credit card, no account, no hidden limits. We believe keyword research should be accessible to everyone — from student bloggers to professional SEOs. The tool is powered by AI and runs unlimited searches at zero cost to you."},
-  {q:"How accurate are the search volume estimates?",a:"Our search volume estimates are AI-generated based on real SEO data patterns, industry benchmarks, and competitive analysis. They're directionally accurate — meaning a keyword showing 10,000 searches will realistically have significantly more traffic than one showing 200. For ground-truth volume data on your own site's keywords, pair with Google Search Console (free)."},
-  {q:"How is Keyword Difficulty (KD) calculated?",a:"KD is scored 0–100 based on how competitive the top-10 ranking pages are for that keyword. A high KD means the pages currently ranking have strong backlink profiles and high domain authority — making them hard to displace. KD below 40 is generally achievable for newer sites; above 70 requires significant authority."},
-  {q:"What is search intent and why does it matter?",a:"Search intent is what the user actually wants when they type a query. Informational intent = they want to learn (blog posts work). Transactional intent = they want to buy (product pages work). Matching your content type to search intent is one of the most important ranking factors in modern SEO — Google actively demotes content that doesn't match what users expect."},
-  {q:"What's the difference between head terms and long-tail keywords?",a:"Head terms are short, broad keywords with high search volume and high competition (e.g., 'shoes'). Long-tail keywords are longer, more specific phrases with lower volume but much lower competition and higher conversion rates (e.g., 'best running shoes for flat feet under ₹3000'). New websites should focus on long-tail keywords first to build traffic momentum."},
-  {q:"Can I use this tool for Google Ads keyword research?",a:"Yes. The CPC (cost-per-click) data and competition level metrics are directly useful for Google Ads planning. High-CPC keywords indicate high commercial value. You can filter by Transactional intent to find the most purchase-ready keywords for your ad campaigns."},
-  {q:"How many keywords can I research per day?",a:"Unlimited. There are no daily search limits, no monthly caps, and no rate limits. Search as many keywords as you need, as often as you need. This is what makes KeywordFinder genuinely different from free tiers of paid tools that restrict you to 3–10 searches per day."},
-  {q:"What countries does KeywordFinder support?",a:"Currently 10 countries: India, United States, United Kingdom, Australia, Canada, Germany, France, Brazil, Singapore, and UAE. Country selection adjusts the search volume estimates and competitive landscape to reflect that specific market — important since a keyword popular in the US may have very different volume in India."},
-  {q:"How do I find low-competition keywords?",a:"Filter the results table by clicking the 'KD' column header to sort by keyword difficulty ascending. Keywords with KD below 30 are easiest to rank for. Also use the 'Long-tail only' type filter to get 4+ word phrases — these almost always have lower competition. Look for keywords with decent volume (200+) and low KD for the best opportunities."},
-  {q:"What are topic clusters and how should I use them?",a:"Topic clusters are groups of semantically related keywords. Instead of writing one post per keyword, you create a comprehensive 'pillar page' on the main topic and multiple 'cluster pages' on subtopics — all linking to each other. This strategy signals topical authority to Google and helps all pages in the cluster rank higher. The Clusters tab organizes your keywords into these groups automatically."},
-  {q:"Can I export keywords to a spreadsheet?",a:"Yes, click 'Export CSV' to download all keyword data as a .csv file. Open it in Google Sheets, Excel, or any spreadsheet tool. The export includes keyword, search volume, KD, CPC, intent, competition level, and topic — everything you need for a professional keyword strategy document."},
-  {q:"How does KeywordFinder compare to Ahrefs and SEMrush?",a:"For core keyword data — volume estimates, difficulty scores, CPC, and intent — KeywordFinder provides comparable metrics completely free. Ahrefs and SEMrush have advantages in backlink analysis, site auditing, rank tracking, and historical data going back years. If you only need keyword research, KeywordFinder gives you everything you need at zero cost. For comprehensive SEO platform features, paid tools have more depth."},
-  {q:"Is there an API available for developers?",a:"Not yet, but it's on the roadmap. If you're a developer who wants to integrate keyword data into your own tools or workflows, stay tuned. You can also build your own integration using the Anthropic API with a similar approach to how KeywordFinder works."},
-  {q:"Why are my search volumes different from what Google Keyword Planner shows?",a:"Google Keyword Planner shows volumes based on Google's actual data, but rounds to broad ranges (e.g., 1K–10K). KeywordFinder's AI estimates are more precise point estimates. Differences of 20–50% between tools are completely normal — all volume data in the industry is estimated, not exact. Google Search Console is the only source of exact data, but only for keywords your site already ranks for."},
-  {q:"How do I use question keywords to get featured snippets?",a:"Go to the 'Questions' tab to see all question-format keywords. To target featured snippets: write a blog post targeting the question as the title (or H2), then immediately answer it in 2–3 sentences at the top of the page (40–50 words works best). Use the question exactly as people search it. Google often pulls these concise, direct answers as featured snippets."}
+  {q:"Is KeywordFinder really 100% free?",a:"Yes, completely free. No credit card, no account, no hidden limits. Powered by AI and runs unlimited searches at zero cost to you."},
+  {q:"How accurate are the search volume estimates?",a:"Our volumes are AI-generated based on real SEO data patterns. They're directionally accurate — a keyword showing 10,000 searches will realistically have significantly more traffic than one showing 200. For ground-truth data on your own site, pair with Google Search Console (free)."},
+  {q:"How is Keyword Difficulty calculated?",a:"KD is scored 0–100 based on how competitive the top-10 ranking pages are. High KD means strong backlink profiles dominate page 1. KD below 40 is achievable for newer sites."},
+  {q:"What is search intent and why does it matter?",a:"Search intent is what the user actually wants. Matching your content type to search intent is one of the most important ranking factors — Google demotes content that doesn't match user expectations."},
+  {q:"How many keywords can I research per day?",a:"Unlimited. No daily limits, no monthly caps. Search as many keywords as you need, as often as you need."},
+  {q:"What countries are supported?",a:"10 countries: India, United States, UK, Australia, Canada, Germany, France, Brazil, Singapore, and UAE. Volume estimates adjust per market."},
+  {q:"How do I find low-competition keywords?",a:"Sort by KD ascending to find easiest keywords. Use the Long-tail filter for 4+ word phrases with lower competition. Target KD below 30 with volume above 200 for best opportunities."},
+  {q:"Can I export keywords?",a:"Yes — click Export CSV to download all data. Opens in Google Sheets or Excel with keyword, volume, KD, CPC, intent, competition, and topic."},
+  {q:"How does KeywordFinder compare to Ahrefs?",a:"For core keyword data KeywordFinder is comparable and free. Ahrefs has advantages in backlink analysis, rank tracking, and historical data. If you only need keyword research, KeywordFinder gives everything at zero cost."},
+  {q:"How do I use question keywords for featured snippets?",a:"Go to the Questions tab. Write a blog post with the question as the title, then answer it in 2-3 concise sentences at the top of the page. Google often pulls these as featured snippets."}
 ];
 
-const faqList = document.getElementById('faqList');
-faqList.innerHTML = faqs.map((f,i)=>`
+document.getElementById('faqList').innerHTML = faqs.map((f,i)=>`
   <div class="faq-item" id="faq-${i}">
     <div class="faq-q" onclick="toggleFaq(${i})">
       <span>${f.q}</span>
@@ -731,37 +523,29 @@ faqList.innerHTML = faqs.map((f,i)=>`
   </div>
 `).join('');
 
-function toggleFaq(i){
-  const el = document.getElementById('faq-'+i);
-  el.classList.toggle('open');
-}
+function toggleFaq(i){ document.getElementById('faq-'+i).classList.toggle('open'); }
 
+// ── KEYWORD TOOL ──
+let allKws=[],sortKey='volume',sortDir=-1,intentFilter='all',turnstileToken=null;
 
-// Turnstile state
-let turnstileToken = null;
-
-function onTurnstileSuccess(token) {
-  turnstileToken = token;
+function onTurnstileSuccess(token){
+  turnstileToken=token;
   document.getElementById('turnstileVerified').classList.add('show');
-  document.getElementById('searchBtn').disabled = false;
+  document.getElementById('searchBtn').disabled=false;
 }
-
-function onTurnstileExpire() {
-  turnstileToken = null;
+function onTurnstileExpire(){
+  turnstileToken=null;
   document.getElementById('turnstileVerified').classList.remove('show');
+  document.getElementById('searchBtn').disabled=true;
 }
 
-// Disable search btn until verified
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('searchBtn').disabled = true;
+window.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('searchBtn').disabled=true;
 });
 
-// ══════════════════════════════
-//  KEYWORD TOOL LOGIC
-// ══════════════════════════════
-let allKws=[],sortKey='volume',sortDir=-1,intentFilter='all';
-
-document.getElementById('kwInput').addEventListener('keydown',e=>{if(e.key==='Enter')runSearch()});
+document.getElementById('kwInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter' && !document.getElementById('searchBtn').disabled) runSearch();
+});
 
 const STEPS=['Scanning search patterns...','Analyzing SERP competition...','Estimating search volumes...','Scoring keyword difficulty...','Detecting search intent...','Building topic clusters...','Generating long-tail ideas...','Finalizing results...'];
 
@@ -770,42 +554,40 @@ function showLoad(){
   document.getElementById('resultsEl').style.display='none';
   document.getElementById('emptyEl').style.display='none';
   document.getElementById('errEl').innerHTML='';
-  const steps=document.getElementById('loadSteps');
-  steps.innerHTML=STEPS.map((s,i)=>`<div class="load-step" style="animation-delay:${i*.35}s">
-    <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>${s}
-  </div>`).join('');
+  document.getElementById('loadSteps').innerHTML=STEPS.map((s,i)=>
+    `<div class="load-step" style="animation-delay:${i*.35}s">
+      <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>${s}
+    </div>`
+  ).join('');
 }
-function hideLoad(){document.getElementById('loadingEl').classList.remove('on')}
+function hideLoad(){ document.getElementById('loadingEl').classList.remove('on'); }
 
 async function runSearch(){
   const kw=document.getElementById('kwInput').value.trim();
-  if(!kw)return;
+  if(!kw) return;
   const country=document.getElementById('countryEl').value;
   const type=document.getElementById('typeEl').value;
   const count=document.getElementById('countEl').value;
   const btn=document.getElementById('searchBtn');
   btn.disabled=true;
   showLoad();
-  // Scroll to tool
   document.getElementById('tool').scrollIntoView({behavior:'smooth',block:'start'});
 
   try{
-    // ✅ SECURE: calls your /api/keywords proxy — API key stays on server
     const res=await fetch('/api/keywords',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({keyword:kw,country,type,count,turnstileToken})
     });
     const data=await res.json();
-    if(data.error)throw new Error(data.error);
+    if(data.error) throw new Error(data.error);
     hideLoad();
-    btn.disabled=false;
     renderResults(data,kw);
-    // Reset turnstile for next search
+    // Reset Turnstile after each search
     turnstileToken=null;
     document.getElementById('turnstileVerified').classList.remove('show');
     if(window.turnstile) turnstile.reset();
-    document.getElementById('searchBtn').disabled=true;
+    btn.disabled=true;
   }catch(err){
     hideLoad();
     btn.disabled=false;
@@ -820,7 +602,6 @@ function renderResults(data,seed){
   document.getElementById('resultsEl').style.display='block';
   const totalVol=data.total_volume||allKws.reduce((a,k)=>a+k.volume,0);
   const avgKd=data.avg_kd||Math.round(allKws.reduce((a,k)=>a+k.kd,0)/allKws.length);
-  const avgCpc=(allKws.reduce((a,k)=>a+k.cpc,0)/allKws.length).toFixed(2);
   const easyC=allKws.filter(k=>k.kd<40).length;
   document.getElementById('statsBar').innerHTML=`
     <div class="stat"><div class="stat-lbl">Keywords found</div><div class="stat-val c-green">${allKws.length}</div></div>
@@ -829,23 +610,21 @@ function renderResults(data,seed){
     <div class="stat"><div class="stat-lbl">Easy wins (KD&lt;40)</div><div class="stat-val c-green">${easyC}</div></div>
   `;
   document.getElementById('resTitle').textContent=`${allKws.length} keywords for "${seed}"`;
-  renderTable();renderClusters(data.clusters||[]);renderQs();
+  renderTable(); renderClusters(data.clusters||[]); renderQs();
 }
 
 function renderTable(){
-  const body=document.getElementById('tBody');
   let kws=[...allKws];
-  if(intentFilter!=='all')kws=kws.filter(k=>k.intent===intentFilter);
+  if(intentFilter!=='all') kws=kws.filter(k=>k.intent===intentFilter);
   kws.sort((a,b)=>sortDir*(a[sortKey]>b[sortKey]?1:-1));
   const mx=Math.max(...kws.map(k=>k.volume));
-  body.innerHTML=kws.map(k=>{
+  document.getElementById('tBody').innerHTML=kws.map(k=>{
     const kdc=k.kd<40?'kd-e':k.kd<70?'kd-m':'kd-h';
     const kdl=k.kd<40?'Easy':k.kd<70?'Med':'Hard';
     const ic={Informational:'i-info',Commercial:'i-com',Transactional:'i-tra',Navigational:'i-nav'}[k.intent]||'i-info';
     const vp=Math.round((k.volume/mx)*100);
     const tr=k.trend||[5,5,5,5,5,5,5,5];
-    const last=tr[tr.length-1],prev=tr[tr.length-2]||5;
-    const td=last>prev?'up':last<prev?'down':'flat';
+    const td=tr[tr.length-1]>tr[tr.length-2]?'up':tr[tr.length-1]<tr[tr.length-2]?'down':'flat';
     const tc={up:'var(--accent)',down:'var(--red)',flat:'var(--muted)'}[td];
     const bars=tr.map(v=>`<div class="tb" style="height:${Math.round((v/10)*16)+2}px;background:${tc}"></div>`).join('');
     return `<tr>
@@ -854,7 +633,7 @@ function renderTable(){
       <td><span class="kd ${kdc}"><span class="kd-dot"></span>${k.kd} ${kdl}</span></td>
       <td class="num">$${(+k.cpc).toFixed(2)}</td>
       <td><span class="intent ${ic}">${k.intent}</span></td>
-      <td>${compIcon(k.competition)} ${k.competition}</td>
+      <td>${{Low:'🟢',Medium:'🟡',High:'🔴'}[k.competition]||'⚪'} ${k.competition}</td>
       <td><div class="trend">${bars}</div></td>
     </tr>`;
   }).join('');
@@ -865,20 +644,18 @@ function renderClusters(clusters){
     <div class="cl-card">
       <div class="cl-name">${esc(c.name)}</div>
       <div class="cl-kws">${(c.keywords||[]).map(k=>`• ${esc(k)}`).join('<br>')}</div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
 function renderQs(){
-  const qs=allKws.filter(k=>/^(how|what|why|when|where|who|which|can|does|is|are|will|should)/i.test(k.keyword)||k.keyword.includes('?'));
+  const qs=allKws.filter(k=>/^(how|what|why|when|where|who|which|can|does|is|are|will|should)/i.test(k.keyword));
   const ic={Informational:'i-info',Commercial:'i-com',Transactional:'i-tra',Navigational:'i-nav'};
   document.getElementById('qBody').innerHTML=qs.map(k=>{
     const kdc=k.kd<40?'kd-e':k.kd<70?'kd-m':'kd-h';
-    const kdl=k.kd<40?'Easy':k.kd<70?'Med':'Hard';
     return `<tr>
       <td class="kw-name">${esc(k.keyword)}</td>
       <td class="num">${fmt(k.volume)}</td>
-      <td><span class="kd ${kdc}"><span class="kd-dot"></span>${k.kd} ${kdl}</span></td>
+      <td><span class="kd ${kdc}"><span class="kd-dot"></span>${k.kd} ${k.kd<40?'Easy':k.kd<70?'Med':'Hard'}</span></td>
       <td><span class="intent ${ic[k.intent]||'i-info'}">${k.intent}</span></td>
     </tr>`;
   }).join('');
@@ -886,31 +663,21 @@ function renderQs(){
 
 function switchTab(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  if(el)el.classList.add('on');
+  if(el) el.classList.add('on');
   ['kw','cl','qq'].forEach(t=>document.getElementById('tab-'+t).style.display=t===name?'block':'none');
 }
-
-function srt(key){if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=-1;}renderTable();}
-function setIntent(val,el){intentFilter=val;document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on'));el.classList.add('on');renderTable();}
-
+function srt(key){ if(sortKey===key)sortDir*=-1; else{sortKey=key;sortDir=-1;} renderTable(); }
+function setIntent(val,el){ intentFilter=val; document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on')); el.classList.add('on'); renderTable(); }
 function exportCSV(){
-  const hdr=['Keyword','Volume','KD','CPC','Intent','Competition','Topic'];
-  const rows=allKws.map(k=>[k.keyword,k.volume,k.kd,k.cpc,k.intent,k.competition,k.parent_topic||'']);
-  const csv=[hdr,...rows].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download='keywordfinder-export.csv';a.click();
+  const csv=[['Keyword','Volume','KD','CPC','Intent','Competition','Topic'],...allKws.map(k=>[k.keyword,k.volume,k.kd,k.cpc,k.intent,k.competition,k.parent_topic||''])].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='keywordfinder-export.csv'; a.click();
 }
-
 function copyKws(){
   navigator.clipboard.writeText(allKws.map(k=>k.keyword).join('\n'));
-  const b=document.querySelectorAll('.btn-sm')[1];
-  b.textContent='✓ Copied!';setTimeout(()=>b.textContent='📋 Copy Keywords',2000);
+  const b=document.querySelectorAll('.btn-sm')[1]; b.textContent='✓ Copied!'; setTimeout(()=>b.textContent='📋 Copy Keywords',2000);
 }
-
-function fmt(n){if(n>=1e6)return(n/1e6).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return String(n)}
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function compIcon(c){return{Low:'🟢',Medium:'🟡',High:'🔴'}[c]||'⚪'}
+function fmt(n){ if(n>=1e6)return(n/1e6).toFixed(1)+'M'; if(n>=1000)return(n/1000).toFixed(1)+'K'; return String(n); }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 </script>
 </body>
 </html>
