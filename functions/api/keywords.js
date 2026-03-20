@@ -1,6 +1,3 @@
-// KeywordFinder.dev — Cloudflare Pages Function
-// Turnstile bot protection + Gemini (primary, free) + Groq (fallback, free)
-
 export async function onRequestPost(context) {
   const { request: req, env } = context;
 
@@ -15,7 +12,7 @@ export async function onRequestPost(context) {
     const body = await req.json();
     const { keyword, country, type, count, turnstileToken } = body;
 
-    // ── 1. TURNSTILE VERIFICATION ──────────────────────
+    // ── 1. TURNSTILE VERIFICATION ──
     if (!turnstileToken) {
       return new Response(JSON.stringify({ error: 'Please complete the CAPTCHA before searching.' }), {
         status: 403, headers: cors
@@ -40,7 +37,7 @@ export async function onRequestPost(context) {
       });
     }
 
-    // ── 2. VALIDATE INPUT ──────────────────────────────
+    // ── 2. VALIDATE INPUT ──
     if (!keyword || keyword.length > 200) {
       return new Response(JSON.stringify({ error: 'Invalid keyword. Max 200 characters.' }), {
         status: 400, headers: cors
@@ -86,9 +83,15 @@ Return ONLY valid JSON, no markdown, no explanation:
     }
   ],
   "clusters": [{ "name": "name", "keywords": ["kw1","kw2","kw3","kw4"] }]
-}`;
+}
 
-    // ── 3. PRIMARY: GEMINI (1,500 free/day) ────────────
+Rules:
+- Volumes realistic for ${cName}: head terms 1000-100000, mid-tail 200-5000, long-tail 10-500
+- KD correlates with volume
+- CPC higher for commercial/transactional intent
+- Include 3-6 topic clusters`;
+
+    // ── 3. PRIMARY: GEMINI (free, 1500/day) ──
     let result = null;
     let lastErr = '';
 
@@ -113,7 +116,7 @@ Return ONLY valid JSON, no markdown, no explanation:
       }
     } catch(e) { lastErr = 'Gemini: ' + e.message; }
 
-    // ── 4. FALLBACK: GROQ (14,400 free/day) ────────────
+    // ── 4. FALLBACK: GROQ (free, 14400/day) ──
     if (!result) {
       try {
         const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -143,7 +146,7 @@ Return ONLY valid JSON, no markdown, no explanation:
     }
 
     if (!result) {
-      return new Response(JSON.stringify({ error: 'AI unavailable. Try again in a moment. (' + lastErr + ')' }), {
+      return new Response(JSON.stringify({ error: 'AI unavailable. Try again. (' + lastErr + ')' }), {
         status: 500, headers: cors
       });
     }
