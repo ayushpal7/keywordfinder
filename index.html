@@ -84,7 +84,7 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 .err-box{background:rgba(255,64,96,.07);border:1px solid rgba(255,64,96,.25);color:var(--red);padding:14px 18px;border-radius:10px;margin:16px 0;font-size:13px}
 
 /* STATS */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:28px 0 24px}
+.stats-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:28px 0 24px}
 .stat{background:var(--bg2);padding:16px 18px}
 .stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
 .stat-val{font-family:var(--fh);font-size:22px;font-weight:700}
@@ -201,7 +201,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
 @media(max-width:700px){
   .input-row{flex-direction:column}
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stats-bar{grid-template-columns:repeat(2,1fr);font-size:12px}}
   .hero h1{font-size:32px;letter-spacing:-1px}
   .steps{grid-template-columns:1fr}
   .step{border-radius:10px!important;margin-bottom:2px}
@@ -263,6 +263,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
       <option value="30">30 keywords</option>
       <option value="50" selected>50 keywords</option>
       <option value="80">80 keywords</option>
+    </select>
+    <select class="sel" id="platformEl">
+      <option value="google" selected>🔍 Google</option>
+      <option value="youtube">▶ YouTube</option>
+      <option value="amazon">🛒 Amazon</option>
+      <option value="bing">🔷 Bing</option>
+      <option value="instagram">📸 Instagram</option>
+      <option value="tiktok">🎵 TikTok</option>
+      <option value="pinterest">📌 Pinterest</option>
+      <option value="playstore">📱 Play Store</option>
     </select>
   </div>
   <div class="ts-wrap">
@@ -521,6 +531,7 @@ async function runSearch(){
   const country=document.getElementById('countryEl').value;
   const type=document.getElementById('typeEl').value;
   const count=document.getElementById('countEl').value;
+  const platform=document.getElementById('platformEl').value;
   const btn=document.getElementById('searchBtn');
   btn.disabled=true;
   showLoad();
@@ -529,7 +540,7 @@ async function runSearch(){
     const res=await fetch('/api/keywords',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({keyword:kw,country,type,count,turnstileToken:tsToken})
+      body:JSON.stringify({keyword:kw,country,type,count,platform,turnstileToken:tsToken})
     });
     const data=await res.json();
     if(data.error)throw new Error(data.error);
@@ -554,11 +565,14 @@ function renderResults(data,seed){
   const tv=data.total_volume||allKws.reduce((a,k)=>a+k.volume,0);
   const ak=data.avg_kd||Math.round(allKws.reduce((a,k)=>a+k.kd,0)/allKws.length);
   const ec=allKws.filter(k=>k.kd<40).length;
+  const platformLabels={google:'🔍 Google',youtube:'▶ YouTube',amazon:'🛒 Amazon',bing:'🔷 Bing',instagram:'📸 Instagram',tiktok:'🎵 TikTok',pinterest:'📌 Pinterest',playstore:'📱 Play Store'};
+  const pLabel=platformLabels[data.platform||'google']||'🔍 Google';
   document.getElementById('statsBar').innerHTML=`
     <div class="stat"><div class="stat-lbl">Keywords found</div><div class="stat-val cg">${allKws.length}</div></div>
     <div class="stat"><div class="stat-lbl">Total est. volume</div><div class="stat-val cb">${fmt(tv)}</div></div>
     <div class="stat"><div class="stat-lbl">Avg. difficulty</div><div class="stat-val">${ak}</div></div>
-    <div class="stat"><div class="stat-lbl">Easy wins (KD&lt;40)</div><div class="stat-val cg">${ec}</div></div>`;
+    <div class="stat"><div class="stat-lbl">Easy wins (KD&lt;40)</div><div class="stat-val cg">${ec}</div></div>
+    <div class="stat"><div class="stat-lbl">Platform</div><div class="stat-val" style="font-size:15px">${pLabel}</div></div>`;
   document.getElementById('resTitle').textContent=`${allKws.length} keywords for "${seed}"`;
   renderTable();renderClusters(data.clusters||[]);renderQs();
 }
