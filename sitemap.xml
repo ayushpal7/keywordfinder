@@ -2,12 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.2">
   <url><loc>https://keywordfinder.dev/</loc><priority>1.0</priority></url>
   <url><loc>https://keywordfinder.dev/about.html</loc><priority>0.7</priority></url>
-  <url><loc>https://keywordfinder.dev/contact.html</loc><priority>0.5</priority></div>
+  <url><loc>https://keywordfinder.dev/contact.html</loc><priority>0.5</priority></url>
 </urlset>
 ```
+5. Commit changes
 
-**Also add robots.txt:**
+**Step 3 — Create robots.txt**
+1. Same as above, new file called `robots.txt`
+2. Paste this:
 ```
 User-agent: *
 Allow: /
 Sitemap: https://keywordfinder.dev/sitemap.xml
+```
+3. Commit changes
+
+**Step 4 — Submit sitemap to Google**
+1. Back in Search Console
+2. Left sidebar → **Sitemaps**
+3. Type `sitemap.xml` → click Submit ✅
+
+---
+
+## DAY 2 — Submit to Free Directories
+
+Do all of these in one sitting. Each one gives you a free backlink and traffic:
+
+**1. Product Hunt**
+- Go to **producthunt.com**
+- Sign up → Submit Product
+- Name: `KeywordFinder.dev`
+- Tagline: `Free keyword research tool — no sign up, no limits`
+- Link: `keywordfinder.dev`
+- This alone can get you 500-2000 visitors in one day 🚀
+
+**2. AlternativeTo**
+- Go to **alternativeto.net**
+- Submit your app as alternative to Ubersuggest and Ahrefs
+- Free backlink from a high authority site
+
+**3. IndieHackers**
+- Go to **indiehackers.com**
+- Create account → Post your product
+- Write 2-3 sentences about why you built it for free
+
+**4. Hacker News**
+- Go to **news.ycombinator.com**
+- Submit as "Show HN: I built a free keyword research tool"
+
+---
+
+## DAY 3 — Reddit Posts
+
+These drive real traffic fast:
+
+Post in these subreddits one by one (don't spam — be genuine):
+
+- **r/SEO** → "I built a free keyword research tool with no daily limits — feedback welcome"
+- **r/Blogging** → "Free tool I made for keyword research — no sign up needed"
+- **r/juststart** → Share your story
+- **r/indiebusiness** → "Built this for free as a side project"
+
+**Rule:** Don't just drop a link. Write 3-4 sentences about WHY you built it and what problem it solves. Then mention the link at the end.
+
+---
+
+## WEEK 1 — Ask Friends & Communities
+
+1. Share on your **WhatsApp groups** — ask friends to visit the site
+2. Share on **LinkedIn** — write a post about building a free SEO tool
+3. Share in any **Facebook SEO/blogging groups** you're in
+4. Share on **Twitter/X** with hashtags `#SEO #buildinpublic #indiedev`
+
+Every visit and share signals to Google that your site is real and useful.
+
+---
+
+## WEEK 2 — Write Your First Blog Post
+
+This is the most important long-term step.
+
+**I'll build you a blog page** — you just need to write one post. Here's the exact title to use:
+
+> **"Free Keyword Research Tool — No Sign Up, No Daily Limits (2026)"**
+
+Why this title? Because people actually search for this exact phrase and there's low competition.
+
+The post should be about:
+- What keyword research is
+- Why paid tools are expensive
+- How your tool works
+- Screenshots of results
+
+I can write this entire blog post for you and add it as a page on your site. Just say yes.
+
+---
+
+## MONTH 1-2 — Keep Doing This
+
+| Task | How often |
+|---|---|
+| Write a blog post | Once a week |
+| Share on Reddit/communities | Once a week |
+| Check Search Console | Every 3 days |
+| Reply to user emails | Same day |
+
+---
+
+## What to check after 2 weeks
+
+Go to Google and search:
+```
+site:keywordfinder.dev
+```
+
+If your pages show up → Google has indexed you ✅
+
+Then search:
+```
+keywordfinder.dev free keyword tool
