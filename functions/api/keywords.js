@@ -12,7 +12,7 @@ export async function onRequestPost(context) {
     const body = await req.json();
     const { keyword, country, type, count, turnstileToken } = body;
 
-    // ── 1. TURNSTILE VERIFICATION ──
+    // 1. TURNSTILE VERIFICATION
     if (!turnstileToken) {
       return new Response(JSON.stringify({ error: 'Please complete the CAPTCHA before searching.' }), {
         status: 403, headers: cors
@@ -37,7 +37,7 @@ export async function onRequestPost(context) {
       });
     }
 
-    // ── 2. VALIDATE INPUT ──
+    // 2. VALIDATE INPUT
     if (!keyword || keyword.length > 200) {
       return new Response(JSON.stringify({ error: 'Invalid keyword. Max 200 characters.' }), {
         status: 400, headers: cors
@@ -91,7 +91,7 @@ Rules:
 - CPC higher for commercial/transactional intent
 - Include 3-6 topic clusters`;
 
-    // ── 3. PRIMARY: GEMINI (free, 1500/day) ──
+    // 3. PRIMARY: GEMINI (free, 1500/day)
     let result = null;
     let lastErr = '';
 
@@ -116,7 +116,7 @@ Rules:
       }
     } catch(e) { lastErr = 'Gemini: ' + e.message; }
 
-    // ── 4. FALLBACK: GROQ (free, 14400/day) ──
+    // 4. FALLBACK: GROQ (free, 14400/day)
     if (!result) {
       try {
         const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {

@@ -14,16 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "KeywordFinder",
-  "url": "https://keywordfinder.dev",
-  "description": "Free keyword research tool with search volume, difficulty, CPC and intent data",
-  "applicationCategory": "SEOApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-}
+{"@context":"https://schema.org","@type":"WebApplication","name":"KeywordFinder","url":"https://keywordfinder.dev","description":"Free keyword research tool with search volume, difficulty, CPC and intent data","applicationCategory":"SEOApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -33,9 +24,9 @@
   --text:#dde4f0;--muted:#5a6a84;--muted2:#8494aa;
   --accent:#00d68f;--accent2:#3b9eff;--accent3:#ff6b35;--accent4:#b57bff;
   --red:#ff4060;--yellow:#ffc94a;
-  --font-head:'Syne',sans-serif;--font-mono:'DM Mono',monospace;--font-serif:'Lora',serif;
+  --fh:'Syne',sans-serif;--fm:'DM Mono',monospace;--fs:'Lora',serif;
 }
-body{background:var(--bg);color:var(--text);font-family:var(--font-mono);font-size:14px;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--fm);font-size:14px;line-height:1.6;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:.25;pointer-events:none;z-index:0}
 .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 20px}
 .wrap-wide{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 20px}
@@ -46,38 +37,38 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-icon{width:34px;height:34px;background:var(--accent);border-radius:8px;display:grid;place-items:center;flex-shrink:0}
 .logo-icon svg{width:18px;height:18px}
-.logo-name{font-family:var(--font-head);font-size:19px;font-weight:800;color:var(--text);letter-spacing:-.5px}
+.logo-name{font-family:var(--fh);font-size:19px;font-weight:800;color:var(--text);letter-spacing:-.5px}
 .logo-name span{color:var(--accent)}
 .hdr-badge{font-size:10px;background:rgba(0,214,143,.1);border:1px solid rgba(0,214,143,.3);color:var(--accent);padding:4px 10px;border-radius:20px;letter-spacing:.1em}
 
 /* HERO */
 .hero{padding:64px 0 44px;text-align:center}
 .hero-tag{display:inline-block;font-size:11px;letter-spacing:.15em;color:var(--accent);background:rgba(0,214,143,.08);border:1px solid rgba(0,214,143,.2);padding:5px 14px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
-.hero h1{font-family:var(--font-head);font-size:clamp(34px,5.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:16px}
+.hero h1{font-family:var(--fh);font-size:clamp(34px,5.5vw,60px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:16px}
 .hero h1 mark{background:none;color:var(--accent)}
 .hero-sub{color:var(--muted2);font-size:15px;max-width:520px;margin:0 auto 40px;line-height:1.7}
 .hero-stats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-.hero-stat-num{font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--accent)}
+.hero-stat-num{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--accent)}
 .hero-stat-lbl{font-size:11px;color:var(--muted);margin-top:2px}
 
 /* TOOL */
 .tool-card{background:var(--bg2);border:1px solid var(--border2);border-radius:18px;padding:28px;max-width:780px;margin:0 auto}
 .input-row{display:flex;gap:10px;margin-bottom:14px}
-.kw-input{flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font-mono);font-size:15px;padding:14px 18px;border-radius:10px;outline:none;transition:border .2s,box-shadow .2s}
+.kw-input{flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--fm);font-size:15px;padding:14px 18px;border-radius:10px;outline:none;transition:border .2s,box-shadow .2s}
 .kw-input::placeholder{color:var(--muted)}
 .kw-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,214,143,.1)}
-.btn-go{background:var(--accent);color:#000;font-family:var(--font-head);font-size:14px;font-weight:800;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.btn-go{background:var(--accent);color:#000;font-family:var(--fh);font-size:14px;font-weight:800;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:opacity .2s;white-space:nowrap}
 .btn-go:hover{opacity:.88}
 .btn-go:disabled{opacity:.4;cursor:not-allowed}
 .opts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.sel{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font-mono);font-size:12px;padding:8px 12px;border-radius:8px;outline:none;cursor:pointer}
+.sel{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--fm);font-size:12px;padding:8px 12px;border-radius:8px;outline:none;cursor:pointer}
 .sel option{background:var(--bg3)}
 
 /* TURNSTILE */
-.turnstile-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
-.turnstile-label{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:8px}
-.turnstile-verified{color:var(--accent);font-size:12px;display:none;align-items:center;gap:6px}
-.turnstile-verified.show{display:flex}
+.ts-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
+.ts-label{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:8px}
+.ts-ok{color:var(--accent);font-size:12px;display:none;align-items:center;gap:6px}
+.ts-ok.show{display:flex}
 .tool-hint{font-size:11px;color:var(--muted);text-align:center}
 
 /* LOADING */
@@ -96,8 +87,8 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:28px 0 24px}
 .stat{background:var(--bg2);padding:16px 18px}
 .stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
-.stat-val{font-family:var(--font-head);font-size:22px;font-weight:700}
-.c-green{color:var(--accent)}.c-blue{color:var(--accent2)}
+.stat-val{font-family:var(--fh);font-size:22px;font-weight:700}
+.cg{color:var(--accent)}.cb{color:var(--accent2)}
 
 /* TABS */
 .tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px}
@@ -106,9 +97,9 @@ header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:
 
 /* RESULTS */
 .res-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
-.res-title{font-family:var(--font-head);font-size:15px;font-weight:700}
+.res-title{font-family:var(--fh);font-size:15px;font-weight:700}
 .actions{display:flex;gap:8px}
-.btn-sm{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-size:11px;padding:6px 12px;border-radius:7px;cursor:pointer;transition:all .2s;font-family:var(--font-mono)}
+.btn-sm{background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-size:11px;padding:6px 12px;border-radius:7px;cursor:pointer;transition:all .2s;font-family:var(--fm)}
 .btn-sm:hover{border-color:var(--accent);color:var(--accent)}
 .filter-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
 .fp{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:11px;padding:4px 12px;border-radius:20px;cursor:pointer;transition:all .2s}
@@ -145,18 +136,18 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .clusters{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
 .cl-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;transition:border .2s}
 .cl-card:hover{border-color:var(--accent)}
-.cl-name{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.cl-name{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px}
 .cl-kws{font-size:11px;color:var(--muted);line-height:1.8}
 
 /* EMPTY */
 .empty{text-align:center;padding:52px 20px;color:var(--muted)}
 .empty-icon{font-size:44px;margin-bottom:14px}
-.empty h3{font-family:var(--font-head);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
+.empty h3{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
 
 /* SEO SECTIONS */
 .content-section{padding:72px 0;border-top:1px solid var(--border)}
 .section-tag{font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
-.section-h2{font-family:var(--font-head);font-size:clamp(24px,3.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:16px}
+.section-h2{font-family:var(--fh);font-size:clamp(24px,3.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:16px}
 .section-lead{color:var(--muted2);font-size:15px;line-height:1.75;max-width:640px;margin-bottom:40px}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
 .feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;transition:border .25s,transform .25s}
@@ -164,53 +155,50 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .feat-icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px;font-size:20px}
 .feat-icon.g{background:rgba(0,214,143,.1)}.feat-icon.b{background:rgba(59,158,255,.1)}
 .feat-icon.p{background:rgba(181,123,255,.1)}.feat-icon.o{background:rgba(255,107,53,.1)}
-.feat-h{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:8px}
+.feat-h{font-family:var(--fh);font-size:15px;font-weight:700;margin-bottom:8px}
 .feat-p{font-size:13px;color:var(--muted2);line-height:1.65}
 .steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0}
 .step{background:var(--bg2);border:1px solid var(--border);padding:28px 24px}
 .step:first-child{border-radius:14px 0 0 14px}.step:last-child{border-radius:0 14px 14px 0}
-.step-num{font-family:var(--font-head);font-size:42px;font-weight:800;color:var(--border2);line-height:1;margin-bottom:12px}
-.step-h{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:8px}
+.step-num{font-family:var(--fh);font-size:42px;font-weight:800;color:var(--border2);line-height:1;margin-bottom:12px}
+.step-h{font-family:var(--fh);font-size:15px;font-weight:700;margin-bottom:8px}
 .step-p{font-size:13px;color:var(--muted2);line-height:1.6}
 .comp-wrap{overflow-x:auto}
 .comp-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .comp-table th,.comp-table td{padding:13px 16px;text-align:center;border-bottom:1px solid var(--border);font-size:13px}
-.comp-table th{background:var(--bg3);font-family:var(--font-head);font-size:12px;font-weight:700}
+.comp-table th{background:var(--bg3);font-family:var(--fh);font-size:12px;font-weight:700}
 .comp-table td:first-child{text-align:left;font-weight:500}
 .comp-table tr:last-child td{border-bottom:none}
 .col-us{background:rgba(0,214,143,.05)!important}
 .check{color:var(--accent)}.cross{color:var(--red)}
 .use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .use-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:16px}
-.use-num{font-family:var(--font-head);font-size:28px;font-weight:800;color:var(--accent);opacity:.3;line-height:1;flex-shrink:0}
-.use-h{font-family:var(--font-head);font-size:14px;font-weight:700;margin-bottom:6px}
+.use-num{font-family:var(--fh);font-size:28px;font-weight:800;color:var(--accent);opacity:.3;line-height:1;flex-shrink:0}
+.use-h{font-family:var(--fh);font-size:14px;font-weight:700;margin-bottom:6px}
 .use-p{font-size:13px;color:var(--muted2);line-height:1.65}
-.prose{font-family:var(--font-serif);font-size:15px;color:var(--muted2);line-height:1.85;max-width:720px}
-.prose h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin:28px 0 10px}
+.prose{font-family:var(--fs);font-size:15px;color:var(--muted2);line-height:1.85;max-width:720px}
+.prose h3{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--text);margin:28px 0 10px}
 .prose p{margin-bottom:14px}
 .prose ul{margin:10px 0 14px 20px}
 .prose li{margin-bottom:6px}
-.prose strong{color:var(--text);font-family:var(--font-mono)}
+.prose strong{color:var(--text);font-family:var(--fm)}
 .faq-list{display:flex;flex-direction:column;gap:2px}
 .faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border .2s}
 .faq-item.open{border-color:var(--accent)}
-.faq-q{padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--font-head);font-size:14px;font-weight:600;line-height:1.4}
+.faq-q{padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--fh);font-size:14px;font-weight:600;line-height:1.4}
 .faq-q:hover{color:var(--accent)}
 .faq-arrow{flex-shrink:0;transition:transform .25s;color:var(--muted)}
 .faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--accent)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:var(--muted2);line-height:1.8}
 .faq-item.open .faq-a{max-height:400px}
 .faq-a-inner{padding:0 20px 18px}
-
-/* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 28px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
 .footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;margin-top:10px;max-width:240px}
-.footer-col h4{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
+.footer-col h4{font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
 .footer-col a{display:block;font-size:13px;color:var(--muted2);text-decoration:none;margin-bottom:8px;transition:color .2s}
 .footer-col a:hover{color:var(--accent)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
-
 @media(max-width:700px){
   .input-row{flex-direction:column}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
@@ -226,10 +214,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <header>
 <div class="wrap-wide">
   <div class="hdr">
-    <a class="logo" href="/">
-      <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M2 9h5M11 9h5M9 2v5M9 11v5" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-      <div class="logo-name">Keyword<span>Finder</span></div>
-    </a>
+    <a class="logo" href="/"><div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M2 9h5M11 9h5M9 2v5M9 11v5" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="logo-name">Keyword<span>Finder</span></div></a>
     <span class="hdr-badge">100% FREE · NO SIGN-UP</span>
   </div>
 </div>
@@ -250,7 +235,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   </div>
 </section>
 
-<!-- TOOL -->
 <div class="tool-card" id="tool">
   <div class="input-row">
     <input class="kw-input" id="kwInput" type="text" placeholder="Enter seed keyword... e.g. yoga mat, digital marketing, web hosting" autocomplete="off"/>
@@ -281,19 +265,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
       <option value="80">80 keywords</option>
     </select>
   </div>
-  <!-- Cloudflare Turnstile -->
-  <div class="turnstile-wrap">
-    <div class="turnstile-label">
+  <div class="ts-wrap">
+    <div class="ts-label">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 100 12A6 6 0 007 1zm0 9.5a.75.75 0 110-1.5.75.75 0 010 1.5zm.75-3.25a.75.75 0 01-1.5 0V4.75a.75.75 0 011.5 0v2.5z" fill="currentColor" opacity=".5"/></svg>
       Verify you are human to search
     </div>
-    <div class="cf-turnstile"
-      data-sitekey="0x4AAAAAACtntEANcGDMn6GV"
-      data-theme="dark"
-      data-callback="onTurnstileSuccess"
-      data-expired-callback="onTurnstileExpire">
-    </div>
-    <div class="turnstile-verified" id="turnstileVerified">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAACtntEANcGDMn6GV" data-theme="dark" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpire"></div>
+    <div class="ts-ok" id="tsOk">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Verified ✓
     </div>
@@ -301,15 +279,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
   <p class="tool-hint">Complete the CAPTCHA above then press Enter or click Analyze</p>
 </div>
 
-<!-- LOADING -->
 <div class="loading" id="loadingEl">
   <div class="spin"></div>
-  <div style="font-family:var(--font-head);font-size:15px;font-weight:700">Analyzing keywords...</div>
+  <div style="font-family:var(--fh);font-size:15px;font-weight:700">Analyzing keywords...</div>
   <div class="load-steps" id="loadSteps"></div>
 </div>
 <div id="errEl"></div>
 
-<!-- RESULTS -->
 <div id="resultsEl" style="display:none">
   <div class="stats-bar" id="statsBar"></div>
   <div class="tabs">
@@ -367,52 +343,43 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 </div>
 
 <!-- FEATURES -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">Features</div>
   <h2 class="section-h2">Everything You Need.<br/>Nothing You Pay For.</h2>
-  <p class="section-lead">KeywordFinder gives you the same data as Ahrefs and SEMrush — keyword difficulty, search volume, CPC, and intent — completely free, forever.</p>
+  <p class="section-lead">KeywordFinder gives you the same data as Ahrefs and SEMrush — completely free, forever.</p>
   <div class="feat-grid">
-    <div class="feat-card"><div class="feat-icon g">📊</div><div class="feat-h">Search Volume Estimates</div><p class="feat-p">Get monthly search volume estimates for any keyword in 10+ countries.</p></div>
-    <div class="feat-card"><div class="feat-icon b">🎯</div><div class="feat-h">Keyword Difficulty Score</div><p class="feat-p">KD score 0–100 tells you how hard it is to rank on page 1 for any keyword.</p></div>
-    <div class="feat-card"><div class="feat-icon p">💡</div><div class="feat-h">Search Intent Detection</div><p class="feat-p">Auto-classify keywords as Informational, Commercial, Transactional, or Navigational.</p></div>
-    <div class="feat-card"><div class="feat-icon o">💰</div><div class="feat-h">CPC & Competition Data</div><p class="feat-p">See cost-per-click and advertiser competition for every keyword.</p></div>
-    <div class="feat-card"><div class="feat-icon g">🌿</div><div class="feat-h">Topic Cluster Builder</div><p class="feat-p">Keywords auto-grouped into topic clusters for modern SEO content strategy.</p></div>
-    <div class="feat-card"><div class="feat-icon b">📈</div><div class="feat-h">Trend Analysis</div><p class="feat-p">8-month search trend data per keyword — spot seasonal and rising trends.</p></div>
-    <div class="feat-card"><div class="feat-icon p">❓</div><div class="feat-h">Question Keywords</div><p class="feat-p">Find question-based keywords perfect for featured snippet opportunities.</p></div>
-    <div class="feat-card"><div class="feat-icon o">⬇</div><div class="feat-h">CSV Export</div><p class="feat-p">Export all keyword data to CSV — import into Google Sheets instantly.</p></div>
+    <div class="feat-card"><div class="feat-icon g">📊</div><div class="feat-h">Search Volume Estimates</div><p class="feat-p">Monthly search volume for any keyword in 10+ countries.</p></div>
+    <div class="feat-card"><div class="feat-icon b">🎯</div><div class="feat-h">Keyword Difficulty Score</div><p class="feat-p">KD score 0–100. Find low-competition keywords you can actually win.</p></div>
+    <div class="feat-card"><div class="feat-icon p">💡</div><div class="feat-h">Search Intent Detection</div><p class="feat-p">Auto-classify as Informational, Commercial, Transactional, or Navigational.</p></div>
+    <div class="feat-card"><div class="feat-icon o">💰</div><div class="feat-h">CPC & Competition Data</div><p class="feat-p">Cost-per-click and advertiser competition for every keyword.</p></div>
+    <div class="feat-card"><div class="feat-icon g">🌿</div><div class="feat-h">Topic Cluster Builder</div><p class="feat-p">Keywords auto-grouped into clusters for modern SEO content strategy.</p></div>
+    <div class="feat-card"><div class="feat-icon b">📈</div><div class="feat-h">Trend Analysis</div><p class="feat-p">8-month search trend data per keyword — spot rising trends early.</p></div>
+    <div class="feat-card"><div class="feat-icon p">❓</div><div class="feat-h">Question Keywords</div><p class="feat-p">Find question-based keywords perfect for featured snippets.</p></div>
+    <div class="feat-card"><div class="feat-icon o">⬇</div><div class="feat-h">CSV Export</div><p class="feat-p">Export all keyword data — import directly into Google Sheets.</p></div>
   </div>
-</div>
-</section>
+</div></section>
 
 <!-- HOW IT WORKS -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">How It Works</div>
   <h2 class="section-h2">Keyword Research in 3 Simple Steps</h2>
-  <p class="section-lead">No complex setup. No learning curve. Just type a keyword and get data in seconds.</p>
+  <p class="section-lead">No setup. No learning curve. Just type a keyword and get data in seconds.</p>
   <div class="steps">
     <div class="step"><div class="step-num">01</div><div class="step-h">Enter Your Seed Keyword</div><p class="step-p">Type any topic, product, or niche. Choose your target country and keyword type.</p></div>
     <div class="step"><div class="step-num">02</div><div class="step-h">AI Analyzes the Data</div><p class="step-p">Our AI generates 50+ keyword variations with difficulty scores, volumes, and intent.</p></div>
     <div class="step"><div class="step-num">03</div><div class="step-h">Export & Start Ranking</div><p class="step-p">Filter by intent, export to CSV, and build content that ranks on Google.</p></div>
     <div class="step"><div class="step-num">04</div><div class="step-h">Repeat for Free</div><p class="step-p">No daily limits. No caps. No credit card. Unlimited research forever.</p></div>
   </div>
-</div>
-</section>
+</div></section>
 
 <!-- COMPARISON -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">Comparison</div>
   <h2 class="section-h2">KeywordFinder vs. Paid Alternatives</h2>
   <p class="section-lead">Why pay $99–$499/month when you can get the same core data for free?</p>
   <div class="comp-wrap">
     <table class="comp-table">
-      <thead><tr>
-        <th style="text-align:left">Feature</th>
-        <th class="col-us">KeywordFinder ✦</th>
-        <th>Ahrefs</th><th>SEMrush</th><th>Ubersuggest</th>
-      </tr></thead>
+      <thead><tr><th style="text-align:left">Feature</th><th class="col-us">KeywordFinder ✦</th><th>Ahrefs</th><th>SEMrush</th><th>Ubersuggest</th></tr></thead>
       <tbody>
         <tr><td>Price</td><td class="col-us" style="color:var(--accent);font-weight:700">Free</td><td>$99–$399/mo</td><td>$119–$449/mo</td><td>Free (limited)</td></tr>
         <tr><td>Sign-up required</td><td class="col-us"><span class="cross">✗ No</span></td><td>✓ Yes</td><td>✓ Yes</td><td>✓ Yes</td></tr>
@@ -421,16 +388,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
         <tr><td>Search intent</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
         <tr><td>Topic clusters</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
         <tr><td>CSV export</td><td class="col-us"><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗ paid</span></td></tr>
-        <tr><td>Daily limits</td><td class="col-us" style="color:var(--accent)">Unlimited</td><td>By plan</td><td>By plan</td><td>3/day</td></tr>
+        <tr><td>Daily search limits</td><td class="col-us" style="color:var(--accent)">Unlimited</td><td>By plan</td><td>By plan</td><td>3/day</td></tr>
       </tbody>
     </table>
   </div>
-</div>
-</section>
+</div></section>
 
 <!-- USE CASES -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">Use Cases</div>
   <h2 class="section-h2">Who Uses KeywordFinder?</h2>
   <p class="section-lead">From solo bloggers to agency teams — anyone who wants organic traffic without paying hundreds per month.</p>
@@ -440,14 +405,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
     <div class="use-card"><div class="use-num">03</div><div><div class="use-h">E-commerce Store Owners</div><p class="use-p">Discover transactional keywords that attract shoppers ready to buy.</p></div></div>
     <div class="use-card"><div class="use-num">04</div><div><div class="use-h">Startup Founders</div><p class="use-p">Validate your niche and build an SEO strategy before spending on ads.</p></div></div>
     <div class="use-card"><div class="use-num">05</div><div><div class="use-h">Marketing Students</div><p class="use-p">Learn keyword research with a real tool — not a textbook.</p></div></div>
-    <div class="use-card"><div class="use-num">06</div><div><div class="use-h">Small Business Owners</div><p class="use-p">Find local and industry keywords to compete with bigger brands.</p></div></div>
+    <div class="use-card"><div class="use-num">06</div><div><div class="use-h">Small Business Owners</div><p class="use-p">Find local keywords to compete with bigger brands organically.</p></div></div>
   </div>
-</div>
-</section>
+</div></section>
 
 <!-- GUIDE -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">Keyword Research Guide</div>
   <h2 class="section-h2">The Complete Guide to Keyword Research in 2025</h2>
   <div class="prose">
@@ -457,24 +420,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
     <h3>The 4 Types of Search Intent</h3>
     <p><strong>Informational</strong> — user wants to learn. Best for blog posts. <strong>Commercial</strong> — researching before buying. Best for comparison content. <strong>Transactional</strong> — ready to buy. Best for product pages. <strong>Navigational</strong> — looking for a specific site.</p>
     <h3>Long-Tail Keywords: Your Secret Weapon</h3>
-    <p>Long-tail keywords (4+ words) are more specific with lower competition. They account for over 70% of all searches. Build content around long-tail keywords to get traffic faster as a new site.</p>
+    <p>Long-tail keywords (4+ words) have lower competition and higher conversion rates. They account for over 70% of all searches. New sites should focus on long-tail first to build traffic momentum.</p>
     <h3>CPC and Content Value</h3>
-    <p>High CPC keywords indicate strong commercial value — businesses make money from that traffic. Even for organic SEO, high-CPC keywords signal profitable territory worth targeting.</p>
+    <p>High CPC keywords indicate strong commercial value. Even for organic SEO, high-CPC keywords signal profitable territory worth targeting with content.</p>
     <h3>Topic Cluster Strategy</h3>
-    <p>Create one comprehensive pillar page on a broad topic, then cluster pages on subtopics — all linking to each other. This builds topical authority and helps all pages rank higher. KeywordFinder's Clusters tab maps this automatically.</p>
+    <p>Create one comprehensive pillar page on a broad topic, then cluster pages on subtopics — all linking to each other. This builds topical authority and helps all pages rank higher.</p>
   </div>
-</div>
-</section>
+</div></section>
 
 <!-- FAQ -->
-<section class="content-section">
-<div class="wrap">
+<section class="content-section"><div class="wrap">
   <div class="section-tag">FAQ</div>
   <h2 class="section-h2">Frequently Asked Questions</h2>
   <p class="section-lead">Everything you need to know about KeywordFinder and keyword research.</p>
   <div class="faq-list" id="faqList"></div>
-</div>
-</section>
+</div></section>
 
 </main>
 
@@ -482,10 +442,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 <div class="wrap-wide">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M2 9h5M11 9h5M9 2v5M9 11v5" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-        <div class="logo-name">Keyword<span>Finder</span></div>
-      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M2 9h5M11 9h5M9 2v5M9 11v5" stroke="#000" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="logo-name">Keyword<span>Finder</span></div></div>
       <p>The only completely free keyword research tool with no daily limits, no sign-up, and no credit card required.</p>
     </div>
     <div class="footer-col"><h4>Tool</h4><a href="#tool">Keyword Finder</a><a href="#tool">KD Checker</a><a href="#tool">Intent Analyzer</a></div>
@@ -500,42 +457,40 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0 2
 </footer>
 
 <script>
-const faqs = [
-  {q:"Is KeywordFinder really 100% free?",a:"Yes, completely free. No credit card, no account, no hidden limits. Powered by AI and runs unlimited searches at zero cost to you."},
-  {q:"How accurate are the search volume estimates?",a:"Our volumes are AI-generated based on real SEO data patterns. They're directionally accurate — a keyword showing 10,000 searches will realistically have significantly more traffic than one showing 200. For ground-truth data on your own site, pair with Google Search Console (free)."},
-  {q:"How is Keyword Difficulty calculated?",a:"KD is scored 0–100 based on how competitive the top-10 ranking pages are. High KD means strong backlink profiles dominate page 1. KD below 40 is achievable for newer sites."},
-  {q:"What is search intent and why does it matter?",a:"Search intent is what the user actually wants. Matching your content type to search intent is one of the most important ranking factors — Google demotes content that doesn't match user expectations."},
-  {q:"How many keywords can I research per day?",a:"Unlimited. No daily limits, no monthly caps. Search as many keywords as you need, as often as you need."},
+const faqs=[
+  {q:"Is KeywordFinder really 100% free?",a:"Yes, completely free. No credit card, no account, no hidden limits. Powered by AI with unlimited searches at zero cost to you."},
+  {q:"How accurate are the search volume estimates?",a:"Volumes are AI-generated based on real SEO data patterns. They are directionally accurate — use them as relative signals, not absolute numbers. For exact data on your own site's keywords, use Google Search Console (free)."},
+  {q:"How is Keyword Difficulty calculated?",a:"KD is scored 0–100 based on how competitive the top-10 ranking pages are for that keyword. Below 40 is achievable for newer sites; above 70 requires significant domain authority."},
+  {q:"What is search intent and why does it matter?",a:"Search intent is what the user actually wants. Matching your content to intent is one of the most important ranking factors — Google actively demotes content that doesn't match what users expect."},
+  {q:"How many keywords can I research per day?",a:"Unlimited. No daily limits, no monthly caps. Search as many keywords as you need, as often as you need, completely free."},
   {q:"What countries are supported?",a:"10 countries: India, United States, UK, Australia, Canada, Germany, France, Brazil, Singapore, and UAE. Volume estimates adjust per market."},
-  {q:"How do I find low-competition keywords?",a:"Sort by KD ascending to find easiest keywords. Use the Long-tail filter for 4+ word phrases with lower competition. Target KD below 30 with volume above 200 for best opportunities."},
-  {q:"Can I export keywords?",a:"Yes — click Export CSV to download all data. Opens in Google Sheets or Excel with keyword, volume, KD, CPC, intent, competition, and topic."},
-  {q:"How does KeywordFinder compare to Ahrefs?",a:"For core keyword data KeywordFinder is comparable and free. Ahrefs has advantages in backlink analysis, rank tracking, and historical data. If you only need keyword research, KeywordFinder gives everything at zero cost."},
-  {q:"How do I use question keywords for featured snippets?",a:"Go to the Questions tab. Write a blog post with the question as the title, then answer it in 2-3 concise sentences at the top of the page. Google often pulls these as featured snippets."}
+  {q:"How do I find low-competition keywords?",a:"Sort by KD ascending to find easiest keywords. Use the Long-tail filter for 4+ word phrases. Target KD below 30 with volume above 200 for the best opportunities."},
+  {q:"Can I export keywords?",a:"Yes — click Export CSV to download all data including keyword, volume, KD, CPC, intent, competition, and topic cluster."},
+  {q:"How does KeywordFinder compare to Ahrefs?",a:"For core keyword data KeywordFinder is comparable and completely free. Ahrefs has advantages in backlink analysis and rank tracking. If you only need keyword research, KeywordFinder gives you everything at zero cost."},
+  {q:"How do I target featured snippets with question keywords?",a:"Go to the Questions tab. Write a blog post with the question as the H1, then answer it in 2-3 concise sentences immediately below. Google pulls these as featured snippets."}
 ];
 
-document.getElementById('faqList').innerHTML = faqs.map((f,i)=>`
+document.getElementById('faqList').innerHTML=faqs.map((f,i)=>`
   <div class="faq-item" id="faq-${i}">
-    <div class="faq-q" onclick="toggleFaq(${i})">
-      <span>${f.q}</span>
+    <div class="faq-q" onclick="toggleFaq(${i})"><span>${f.q}</span>
       <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
-  </div>
-`).join('');
+  </div>`).join('');
 
-function toggleFaq(i){ document.getElementById('faq-'+i).classList.toggle('open'); }
+function toggleFaq(i){document.getElementById('faq-'+i).classList.toggle('open')}
 
-// ── KEYWORD TOOL ──
-let allKws=[],sortKey='volume',sortDir=-1,intentFilter='all',turnstileToken=null;
+// TOOL
+let allKws=[],sortKey='volume',sortDir=-1,intentFilter='all',tsToken=null;
 
 function onTurnstileSuccess(token){
-  turnstileToken=token;
-  document.getElementById('turnstileVerified').classList.add('show');
+  tsToken=token;
+  document.getElementById('tsOk').classList.add('show');
   document.getElementById('searchBtn').disabled=false;
 }
 function onTurnstileExpire(){
-  turnstileToken=null;
-  document.getElementById('turnstileVerified').classList.remove('show');
+  tsToken=null;
+  document.getElementById('tsOk').classList.remove('show');
   document.getElementById('searchBtn').disabled=true;
 }
 
@@ -544,7 +499,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 
 document.getElementById('kwInput').addEventListener('keydown',e=>{
-  if(e.key==='Enter' && !document.getElementById('searchBtn').disabled) runSearch();
+  if(e.key==='Enter'&&!document.getElementById('searchBtn').disabled) runSearch();
 });
 
 const STEPS=['Scanning search patterns...','Analyzing SERP competition...','Estimating search volumes...','Scoring keyword difficulty...','Detecting search intent...','Building topic clusters...','Generating long-tail ideas...','Finalizing results...'];
@@ -555,16 +510,14 @@ function showLoad(){
   document.getElementById('emptyEl').style.display='none';
   document.getElementById('errEl').innerHTML='';
   document.getElementById('loadSteps').innerHTML=STEPS.map((s,i)=>
-    `<div class="load-step" style="animation-delay:${i*.35}s">
-      <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>${s}
-    </div>`
+    `<div class="load-step" style="animation-delay:${i*.35}s"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>${s}</div>`
   ).join('');
 }
-function hideLoad(){ document.getElementById('loadingEl').classList.remove('on'); }
+function hideLoad(){document.getElementById('loadingEl').classList.remove('on')}
 
 async function runSearch(){
   const kw=document.getElementById('kwInput').value.trim();
-  if(!kw) return;
+  if(!kw)return;
   const country=document.getElementById('countryEl').value;
   const type=document.getElementById('typeEl').value;
   const count=document.getElementById('countEl').value;
@@ -572,21 +525,19 @@ async function runSearch(){
   btn.disabled=true;
   showLoad();
   document.getElementById('tool').scrollIntoView({behavior:'smooth',block:'start'});
-
   try{
     const res=await fetch('/api/keywords',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({keyword:kw,country,type,count,turnstileToken})
+      body:JSON.stringify({keyword:kw,country,type,count,turnstileToken:tsToken})
     });
     const data=await res.json();
-    if(data.error) throw new Error(data.error);
+    if(data.error)throw new Error(data.error);
     hideLoad();
     renderResults(data,kw);
-    // Reset Turnstile after each search
-    turnstileToken=null;
-    document.getElementById('turnstileVerified').classList.remove('show');
-    if(window.turnstile) turnstile.reset();
+    tsToken=null;
+    document.getElementById('tsOk').classList.remove('show');
+    if(window.turnstile)turnstile.reset();
     btn.disabled=true;
   }catch(err){
     hideLoad();
@@ -600,22 +551,21 @@ function renderResults(data,seed){
   allKws=data.keywords||[];
   document.getElementById('emptyEl').style.display='none';
   document.getElementById('resultsEl').style.display='block';
-  const totalVol=data.total_volume||allKws.reduce((a,k)=>a+k.volume,0);
-  const avgKd=data.avg_kd||Math.round(allKws.reduce((a,k)=>a+k.kd,0)/allKws.length);
-  const easyC=allKws.filter(k=>k.kd<40).length;
+  const tv=data.total_volume||allKws.reduce((a,k)=>a+k.volume,0);
+  const ak=data.avg_kd||Math.round(allKws.reduce((a,k)=>a+k.kd,0)/allKws.length);
+  const ec=allKws.filter(k=>k.kd<40).length;
   document.getElementById('statsBar').innerHTML=`
-    <div class="stat"><div class="stat-lbl">Keywords found</div><div class="stat-val c-green">${allKws.length}</div></div>
-    <div class="stat"><div class="stat-lbl">Total est. volume</div><div class="stat-val c-blue">${fmt(totalVol)}</div></div>
-    <div class="stat"><div class="stat-lbl">Avg. difficulty</div><div class="stat-val">${avgKd}</div></div>
-    <div class="stat"><div class="stat-lbl">Easy wins (KD&lt;40)</div><div class="stat-val c-green">${easyC}</div></div>
-  `;
+    <div class="stat"><div class="stat-lbl">Keywords found</div><div class="stat-val cg">${allKws.length}</div></div>
+    <div class="stat"><div class="stat-lbl">Total est. volume</div><div class="stat-val cb">${fmt(tv)}</div></div>
+    <div class="stat"><div class="stat-lbl">Avg. difficulty</div><div class="stat-val">${ak}</div></div>
+    <div class="stat"><div class="stat-lbl">Easy wins (KD&lt;40)</div><div class="stat-val cg">${ec}</div></div>`;
   document.getElementById('resTitle').textContent=`${allKws.length} keywords for "${seed}"`;
-  renderTable(); renderClusters(data.clusters||[]); renderQs();
+  renderTable();renderClusters(data.clusters||[]);renderQs();
 }
 
 function renderTable(){
   let kws=[...allKws];
-  if(intentFilter!=='all') kws=kws.filter(k=>k.intent===intentFilter);
+  if(intentFilter!=='all')kws=kws.filter(k=>k.intent===intentFilter);
   kws.sort((a,b)=>sortDir*(a[sortKey]>b[sortKey]?1:-1));
   const mx=Math.max(...kws.map(k=>k.volume));
   document.getElementById('tBody').innerHTML=kws.map(k=>{
@@ -624,7 +574,7 @@ function renderTable(){
     const ic={Informational:'i-info',Commercial:'i-com',Transactional:'i-tra',Navigational:'i-nav'}[k.intent]||'i-info';
     const vp=Math.round((k.volume/mx)*100);
     const tr=k.trend||[5,5,5,5,5,5,5,5];
-    const td=tr[tr.length-1]>tr[tr.length-2]?'up':tr[tr.length-1]<tr[tr.length-2]?'down':'flat';
+    const td=tr[7]>tr[6]?'up':tr[7]<tr[6]?'down':'flat';
     const tc={up:'var(--accent)',down:'var(--red)',flat:'var(--muted)'}[td];
     const bars=tr.map(v=>`<div class="tb" style="height:${Math.round((v/10)*16)+2}px;background:${tc}"></div>`).join('');
     return `<tr>
@@ -641,10 +591,7 @@ function renderTable(){
 
 function renderClusters(clusters){
   document.getElementById('clustersEl').innerHTML=clusters.map(c=>`
-    <div class="cl-card">
-      <div class="cl-name">${esc(c.name)}</div>
-      <div class="cl-kws">${(c.keywords||[]).map(k=>`• ${esc(k)}`).join('<br>')}</div>
-    </div>`).join('');
+    <div class="cl-card"><div class="cl-name">${esc(c.name)}</div><div class="cl-kws">${(c.keywords||[]).map(k=>`• ${esc(k)}`).join('<br>')}</div></div>`).join('');
 }
 
 function renderQs(){
@@ -652,32 +599,27 @@ function renderQs(){
   const ic={Informational:'i-info',Commercial:'i-com',Transactional:'i-tra',Navigational:'i-nav'};
   document.getElementById('qBody').innerHTML=qs.map(k=>{
     const kdc=k.kd<40?'kd-e':k.kd<70?'kd-m':'kd-h';
-    return `<tr>
-      <td class="kw-name">${esc(k.keyword)}</td>
-      <td class="num">${fmt(k.volume)}</td>
-      <td><span class="kd ${kdc}"><span class="kd-dot"></span>${k.kd} ${k.kd<40?'Easy':k.kd<70?'Med':'Hard'}</span></td>
-      <td><span class="intent ${ic[k.intent]||'i-info'}">${k.intent}</span></td>
-    </tr>`;
+    return `<tr><td class="kw-name">${esc(k.keyword)}</td><td class="num">${fmt(k.volume)}</td><td><span class="kd ${kdc}"><span class="kd-dot"></span>${k.kd} ${k.kd<40?'Easy':k.kd<70?'Med':'Hard'}</span></td><td><span class="intent ${ic[k.intent]||'i-info'}">${k.intent}</span></td></tr>`;
   }).join('');
 }
 
 function switchTab(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  if(el) el.classList.add('on');
+  if(el)el.classList.add('on');
   ['kw','cl','qq'].forEach(t=>document.getElementById('tab-'+t).style.display=t===name?'block':'none');
 }
-function srt(key){ if(sortKey===key)sortDir*=-1; else{sortKey=key;sortDir=-1;} renderTable(); }
-function setIntent(val,el){ intentFilter=val; document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on')); el.classList.add('on'); renderTable(); }
+function srt(key){if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=-1;}renderTable();}
+function setIntent(val,el){intentFilter=val;document.querySelectorAll('.fp').forEach(b=>b.classList.remove('on'));el.classList.add('on');renderTable();}
 function exportCSV(){
   const csv=[['Keyword','Volume','KD','CPC','Intent','Competition','Topic'],...allKws.map(k=>[k.keyword,k.volume,k.kd,k.cpc,k.intent,k.competition,k.parent_topic||''])].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
-  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='keywordfinder-export.csv'; a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='keywordfinder-export.csv';a.click();
 }
 function copyKws(){
   navigator.clipboard.writeText(allKws.map(k=>k.keyword).join('\n'));
-  const b=document.querySelectorAll('.btn-sm')[1]; b.textContent='✓ Copied!'; setTimeout(()=>b.textContent='📋 Copy Keywords',2000);
+  const b=document.querySelectorAll('.btn-sm')[1];b.textContent='✓ Copied!';setTimeout(()=>b.textContent='📋 Copy Keywords',2000);
 }
-function fmt(n){ if(n>=1e6)return(n/1e6).toFixed(1)+'M'; if(n>=1000)return(n/1000).toFixed(1)+'K'; return String(n); }
-function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function fmt(n){if(n>=1e6)return(n/1e6).toFixed(1)+'M';if(n>=1000)return(n/1000).toFixed(1)+'K';return String(n)}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 </script>
 </body>
 </html>
